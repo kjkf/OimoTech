@@ -124,7 +124,7 @@ task("scripts", () => {
 task('server', () => {
     browserSync.init({
         server: {
-            baseDir: "./dist"
+            baseDir: "./dist/"
         },
         open: false
     });
