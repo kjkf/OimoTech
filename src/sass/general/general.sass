@@ -1,0 +1,315 @@
+*
+	&:focus, &:active
+		outline: none !important
+
+html
+	//overflow: hidden
+	font-size: $fontSize_body
+
+body
+	font:
+		family: $font_KZPFDinTextCompProRegular
+		size: 1rem
+		weight: 400
+	color: $fontColorMain
+	line-height: 1
+	min-width: $phone-width-min
+	margin: 0
+	padding: 0
+	height: 100vh
+	background-color: $body_bg
+	+large-down
+		font-size: 20px
+		line-height: 24px
+
+a
+	text-decoration: none
+
+p
+	margin: 0px
+
+h1
+	font-size: $fontSize_h1
+	line-height: $lineHeight_h1
+	font-weight: normal
+	+phone-down
+		font-size: 36px
+		line-height: 43px
+
+h2
+	font-size: $fontSize_h2
+	line-height: $lineHeight_h2
+
+.title
+	margin: 0px
+	color: $blue-dark
+	text-align: center
+
+.bg--blue
+	background-color: $blue-dark
+
+.bg--yellow
+	background-color: $yellow
+
+.container
+	background-color: transparent
+	display: flex
+	justify-content: center
+	align-items: center
+	flex-direction: column
+
+	+phone
+		max-width: $phone-width
+	+tablet
+		max-width: $tablet-width
+	+ipad
+		max-width: $ipad-width
+	+laptop
+		max-width: $laptop-width
+	+large
+		max-width: $large-width
+	+extra_large
+		max-width: $extra_large-width
+		padding-left: 90px
+		padding-right: 90px
+
+	+large-down
+		padding-left: 35px
+		padding-right: 35px
+		//background: yellow
+
+	+laptop-down
+		padding-left: 5px
+		padding-right: 5px
+		//background: green
+
+.social-menu
+	display: flex
+	flex-direction: row
+	justify-content: center
+	align-self: flex-start
+	margin: 0px
+	padding: 0px
+	&__item
+		display: inline-block
+		list-style: none
+		width: 30px
+		height: 30px
+		border-radius: 50%
+		//background-color: green
+		margin-right: 20px
+		&:last-child
+			margin-right: 0px
+		a
+			display: inline-flex
+
+	.telegram
+	.youtube
+	.twitter
+	.fb
+
+
+.logo
+	display: inline-flex
+	justify-content: center
+	align-items: center
+	width: $logo_width
+	height: $logo_height
+	border-radius: 50%
+	background-color: $blue-dark
+	padding: 14px
+	+laptop-down
+		width: $logo_width_mob
+		height: $logo_height_mob
+	a
+		display: inline-block
+		width: 100%
+		height: 100%
+		background:
+			image: url("../images/content/logo.png")
+			repeat: no-repeat
+			size: contain
+			position: bottom center
+
+.search
+	display: flex
+	width: $width_search
+	position: relative
+	&:before
+		content: ''
+		position: absolute
+		top: calc( (#{$height_search} - #{$height_search_ic}) / 2)
+		left: $left_search_ic
+		width: $width_search_ic
+		height: $height_search_ic
+		background:
+			color: transparent
+			image: url("../images/icons/icon_search.svg")
+			repeat: no-repeat
+			size: contain
+		+large-down
+			top: calc( (#{$height_search_lapt} - #{$height_search_ic}) / 2)
+			left: 3px
+		+laptop-down
+			width: $width_search_ic_mob
+			height: $height_search_ic_mob
+			top: calc( (#{$height_search_mob} - #{$height_search_ic_mob}) / 2)
+
+	+large-down
+		width: $width_search_lapt
+	+laptop-down
+		width: 145px
+	&__field
+		width: 100%
+		min-height: $height_search
+		border-radius: 10px
+		border: 0px
+		background-color: #FFFFFF
+		font-size: 24px
+		font-family: $font_KZPFDinTextCompProRegular
+		padding: 0px $left_search_ic 0px calc(#{$left_search_ic}*2 + 30px)
+		+large-down
+			font-size: 0.5rem
+			min-height: $height_search_lapt
+			border-radius: 5px
+		+laptop-down
+			min-height: $height_search_mob
+			padding: 0px $left_search_ic 0px calc(#{$left_search_ic}*2 + 15px)
+			border-radius: 8px
+
+
+
+		+placeholder
+			color: $grey1
+
+.lang-menu
+	display: flex
+	flex-direction: row
+	justify-content: center
+	align-self: flex-start
+	margin: 0px
+	padding: 0px
+	font-size: $fontSize_lang
+	line-height: $lineHeight_lang
+	border-radius: $rad_lang
+	border: 2px solid #FFFFFF
+	padding: 0px
+	&__item
+		display: inline-flex
+		justify-content: center
+		align-items: center
+		list-style: none
+		width: $width_lang_item
+		min-height: $height_lang_item
+		border-right: 0.3px solid $borderColor_lang
+
+		+laptop-down
+			width: 36px
+
+		&:last-child
+			margin-right: 0px
+			border-right: 0px
+		a
+			display: inline-block
+			text-transform: uppercase
+			color: $grey-light
+		&:hover
+			a
+				text-shadow: $shadow_hover
+
+.lang-menu.selected
+	.lang-menu__item
+		display: none
+	.lang-menu__item.active
+		display: inline-flex
+
+.text-center
+	text-align: center
+
+.m-0
+	margin: 0px
+
+.btn
+	height: auto
+	min-height: $btn-h
+	display: inline-block
+	font-family: $font_KZPFDinTextCompProRegular
+	font-size: $btn-fs
+	line-height: $btn-lh
+	color: $btn-color
+	text-transform: uppercase
+	text-align: center
+	vertical-align: middle
+	cursor: pointer
+	user-select: none
+	border: $btn-border-width solid transparent
+	border-radius: $btn-border-rad
+	padding: 0px 14px
+	background: $blue-dark
+	box-shadow: inset 0px 4px 4px rgba(255, 255, 255, 0.25)
+	//padding: $btn-pt 0px $btn-pb
+
+.scrolled::-webkit-scrollbar
+	width: 10px
+	height: 4px
+	background-color: rgba(229, 229, 229, 0.39)
+	border-radius: 5px
+
+.scrolled::-webkit-scrollbar-thumb
+	background-color: $scrollbar_bg
+	border-radius: 5px
+
+.scrolled
+	scrollbar-color: $scrollbar_bg rgba(229, 229, 229, 0.39)
+	scrollbar-width: thin
+
+.link
+	display: flex
+	flex-direction: row
+	justify-content: center
+	background: none
+	border: none
+	font-size: 30px
+	font-family: inherit
+	color: #1D6390
+	width: 100%
+	padding-bottom: 20px
+	padding-top: 5px
+	cursor: pointer
+	+large-down
+		font-size: 20px
+	+laptop-down
+    font-size: 20px
+
+.link::after
+  content: ''
+  height: 16px
+  width: 25px
+  background-repeat: no-repeat
+  background-size: 15px 15px
+  background-position: right center
+
+.showinmobile
+  display: none
+  +laptop-down
+    display: flex
+
+.icn
+  width: 30px
+  height: 30px
+  border-radius: 50%
+  border: 3px solid #FFFFFF
+  background-size: 15px 15px
+  background-repeat: no-repeat
+  background-position: center center
+  cursor: pointer
+  &:hover
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8) //некорректно работает
+  &__telegram
+    background-image: url('../images/icons/icon_telegram.svg')
+  &__fb
+    background-image: url('../images/icons/icon_fb.svg')
+  &__tw
+    background-image: url('../images/icons/icon_twit.svg')
+  &__yt
+    background-image: url('../images/icons/icon_youtube.svg')
