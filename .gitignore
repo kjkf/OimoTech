@@ -10,3 +10,4 @@ package-lock.json
 .gradle
 *.env
 *.xml
+.DS_Store
