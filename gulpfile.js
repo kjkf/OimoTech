@@ -22,7 +22,6 @@ const reload = browserSync.reload;
 sass.compiler = require('node-sass');
 
 task('clean', () => {
-    console.log(env);
     return src('dist/**/*', { read: false }).pipe( rm() );
 });
 
@@ -107,8 +106,14 @@ task('icons', () => {
         .pipe(dest("dist/public/images/icons"));
 });
 
+const scripts = [
+    'node_modules/jquery/dist/jquery.js',
+    'node_modules/bootstrap/dist/js/bootstrap.min.js',
+    'src/js/**/*.js'
+];
+
 task("scripts", () => {
-    return src('src/js/**/*.js')
+    return src(scripts)
         .pipe(gulpif(env === 'dev', sourcemaps.init()))
         .pipe(concat('main.min.js', { newLine: ";" }))
         .pipe(babel({

@@ -1,5 +1,5 @@
 {
-  "name": "ata-joly",
+  "name": "OimoTech",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -33,6 +33,8 @@
     "node-sass": "^4.13.1"
   },
   "dependencies": {
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.5.1",
     "normalize.css": "^8.0.1"
   },
   "browserslist": [
