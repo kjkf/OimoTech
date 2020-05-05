@@ -2,7 +2,6 @@
   .container
     max-width: 1200px!important
 .about
-  //justify-content: flex-end
   position: relative
   margin-top: 50px
   &-caption
@@ -19,28 +18,38 @@
     top: -51px
     left: 0
     background: white
-    p
-      font-family: inherit
-    &__bold
-      font-family: $font-Gilroy-ExtraBold
-      font-size: 30px
-      color: #017bdc
   &-text
-    margin-left: 260px
+    margin-left: 230px
     font-family: $font-Roboto-Regular
     font-size: 16px
-    line-height: 2.188
+    line-height: 1.5
     border: 7px solid #017bdc
     border-radius: 5px
-    padding: 50px 50px 50px 315px
-    p
-      font-family: inherit
+    padding: 50px 55px 50px 315px
     &__bold
       font-family: $font-Roboto-Bold
+.text__blue
+  font-family: $font-Gilroy-ExtraBold
+  font-size: 30px
+  color: #017bdc
 
 .about-infograf
-  padding-top: 50px
-  padding-left: 260px
+  padding-top: 40px
+  padding-left: 160px
+  position: relative
+  .row:first-child
+    //padding-top: 40px
+    padding-left: 100px
+  &:before
+    width: 213px
+    height: 186px
+    content: ''
+    position: absolute
+    top: -45px
+    left: -10px
+    background-image: url('../images/icons/protection.png')
+    background-repeat: no-repeat
+    background-size: 213px 186px
 
 .about-block
   display: flex
@@ -51,7 +60,7 @@
     font-size: 80px
     color: #017bdc
     text-align: right
-    padding: 0
+    padding: 0 3px
   &__txt
     display: flex
     justify-content: center
@@ -59,5 +68,31 @@
     font-family: $font-Gilroy-Light
     font-size: 15px
     text-align: left
-    width: 120px
+    //width: 120px
     padding: 0
+
+.about-footer
+  margin-top: 55px
+  font-family: $font-Gilroy-Light
+  font-size: 30px
+  .row
+    justify-content: center
+    align-items: center
+  &__block
+    margin-left: 50px
+    padding: 25px 15px
+    font-family: $font-Caveat-Regular
+    font-size: 20px
+    border: 1px solid #d1d1d1
+    border-radius: 5px
+    position: relative
+    &:after
+      position: absolute
+      content: ''
+      width: 55px
+      height: 40px
+      bottom: -10px
+      right: -15px
+      background-image: url('../images/icons/RU-flag.png')
+      background-repeat: no-repeat
+      background-size: 55px 40px
