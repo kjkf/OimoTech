@@ -17,6 +17,7 @@
       line-height: 54px
       &--blue
         color: $blue
+        margin-bottom: 50px
 
     .banner__info-wrapper
       display: flex
@@ -24,15 +25,85 @@
       align-items: center
 
       .info
+        max-width: 170px
         display: flex
         justify-content: center
-        align-items: center
+        align-items: stretch
+        font-family: $font-Gilroy-ExtraBold
+        color: $gold-yellow
+        font-size: 35px
+        line-height: 30px
+        margin-right: 55px
+        position: relative
+        &:before
+          content: ''
+          position: absolute
+          display: inline-block
+          width: 25px
+          height: 25px
+          background:
+            image: url("../images/icons/avirus.png")
+            repeat: no-repeat
+            position: center
+            size: 25px
+          right: 9px
+          bottom: 10px
+
+        &:last-child
+          margin-right: 0
+          max-width: 205px
+          &:before
+            width: 30px
+            height: 30px
+            top: 6px
+            right: 0
+            background:
+              image: url("../images/icons/cup.png")
+              size: 30px
 
         .info-big-number
           font-size: 70px
+          line-height: 70px
+          display: inline-block
+          margin-right: 5px
 
+        .info-text--small
+          font-size: 14px
+          line-height: 14px
+          color: $fontColorMain
+          display: inline-block
+          font-family: $font-Gilroy-Light
 
+  .carousel
+    .slide
+      border-radius: 9px
+    .slide-desc
+      font-size: 16px
+      line-height: 54px
+      color: #0187c9
+      font-family: $font-Gilroy-ExtraBold
+      text-align: center
+    .carousel-control-prev, .carousel-control-next
+      width: 30px
+      height: 30px
+      border-radius: 50%
+      background: $slider-control-color
+      top: calc(50% - 30px)
+      opacity: 1
+      left: 20px
+      &:hover
+        opacity: .85
+    .carousel-control-next
+      left: calc(100% - 20px - 30px)
 
+    .carousel-control-prev-icon, .carousel-control-next-icon
+      background:
+        image: url("../images/icons/icon_arrow.svg")
+        size: 8px
+        position: center
+        repeat: no-repeat
+    .carousel-control-prev-icon
+      transform: rotate(180deg)
 
 .shadow-blue-box
   background: rgb(43,127,193)
