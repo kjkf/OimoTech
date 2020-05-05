@@ -1,0 +1,91 @@
+.advantages
+  .cols
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    color: #ffffff
+    padding: 0 25px
+
+    .a-col
+      width: 35%
+      max-width: 370px
+      margin-right: 36px
+      padding: 25px 60px 20px 115px
+      font-family: $font-Gilroy-Light
+      position: relative
+      &:before
+        content: ''
+        display: inline-block
+        position: absolute
+        width: 65px
+        height: 70px
+        left: 25px
+        top: 15px
+        background:
+          image: url("../images/icons/certification.png")
+          repeat: no-repeat
+          position: center
+          size: 64px 70px
+      .check-icon
+        display: inline-block
+        position: absolute
+        background-color: rgb(232,232,232)
+        background: linear-gradient(90deg, rgba(232,232,232,1) 0%, rgba(232,232,232,1) 60%, rgba(0,0,0,0) 100%)
+        -webkit-box-shadow: inset 23px 22px 37px -16px rgba(0,0,0,0.08)
+        -moz-box-shadow: inset 23px 22px 37px -16px rgba(0,0,0,0.08)
+        box-shadow: inset 23px 22px 37px -16px rgba(0,0,0,0.08)
+        width: 50px
+        height: 50px
+        border-radius: 50%
+        right: -25px
+        top: calc(50% - 25px)
+        &:before
+          content: ''
+          display: inline-block
+          width: 50px
+          height: 50px
+          background:
+            image: url("../images/icons/check-mark.png")
+            position: center
+            repeat: no-repeat
+            size: 40px
+
+
+      &:last-child
+        margin-right: 0
+        &:before
+          width: 75px
+          height: 73px
+          background:
+            image: url("../images/icons/protection.png")
+            size: 75px 73px
+
+      &:nth-child(2)
+        &:before
+          width: 53px
+          height: 68px
+          transform: rotate(-15deg)
+          background:
+            image: url("../images/icons/full-construction.png")
+            size: 53px 68px
+
+      .title--white
+        color: #ffffff
+        font-size: 14px
+        text-transform: uppercase
+
+      .descr
+        padding-right: 11px
+        font-size: 15px
+        line-height: 18px
+        position: relative
+        &:before
+          content: ''
+          display: inline-block
+          position: absolute
+          height: 55px
+          width: 1px
+          background: #ffffff
+          opacity: .31
+          left: -18px
+          top: -21px
