@@ -1,3 +1,54 @@
 .header
   .container
+    font-size: 12px
+    line-height: 17px
+    font-family: $font-Gilroy-Light
     display: flex
+    flex-direction: column
+    padding: 0px 30px
+  .row
+    justify-content: space-between
+  &__logo
+    margin-right: 30px
+
+.logo
+  display: flex
+  &__link
+    display: inline-block
+    width: 100px
+    background-color: red
+  &__text
+    display: inline-block
+    width: 200px
+
+.contacts
+  text-align: right
+  &__phone
+    font-family: $font-Gilroy-ExtraBold
+    font-size: 23px
+    line-height: 1
+
+.cup
+  position: relative
+  width: 270px
+  padding-left: 75px
+  &:before
+    content: ''
+    position: absolute
+    display: inline-block
+    top: -10px
+    left: 0px
+    width: 64px
+    height: 66px
+    background:
+      color: transparent
+      image: url("../images/icons/cup.png")
+      repeat: no-repeat
+      size: contain
+
+.get-offer
+  width: 300px
+  align-self: center
+  .btn
+    width: 100%
+    padding: 10px 10px 10px 40px
