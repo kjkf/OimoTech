@@ -19,6 +19,8 @@ body
 	height: 100vh
 	background-color: $body_bg
 
+h1, h2, p, ul
+	margin: 0px
 
 h1
 	font-size: $fontSize_h1
@@ -36,6 +38,9 @@ h2
 .title
 	color: $fontColorMain
 	font-family: $font-Gilroy-ExtraBold
+
+.green
+	color: $green
 
 .bg--grey
 	background-color: $grey
@@ -65,12 +70,13 @@ h2
 		content: ''
 		position: absolute
 		top: 0px
-		left: 0px
+		left: 6px
 		width: 41px
 		height: 54px
+		transform: rotate(-15deg)
 		background:
 			color: transparent
-			//image: url("")
+			image: url("../images/icons/ic-trend.png")
 			repeat: no-repeat
 			size: contain
 
