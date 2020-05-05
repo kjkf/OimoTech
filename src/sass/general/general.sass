@@ -39,3 +39,43 @@ h2
 
 .blue-text
 	color: $blue-text
+
+.text-upper
+	text-transform: uppercase
+
+.btn-green
+	background: rgb(101,196,115)
+	background: linear-gradient(-90deg, rgba(101,196,115,1) 0%, rgba(56,150,88,1) 150%)
+
+	-webkit-box-shadow: 0px 5px 0px 0px rgba(48,125,71,1)
+	-moz-box-shadow: 0px 5px 0px 0px rgba(48,125,71,1)
+	box-shadow: 0px 5px 0px 0px rgba(48,125,71,1)
+
+	border-radius: 10px
+	font-family: $font-Gilroy-Light
+	font-stize: $fs_btn_green
+	color: $col_btn_green
+
+.btn-ic
+	position: relative
+	&:before
+		content: ''
+		position: absolute
+		top: 0px
+		left: 0px
+		width: 41px
+		height: 54px
+		background:
+			color: transparent
+			//image: url("")
+			repeat: no-repeat
+			size: contain
+
+.btn-blue
+	color: $col_btn_blue
+	font-size: $fs_btn_blue
+	background: rgb(69,166,244)
+	background: linear-gradient(-90deg, rgba(69,166,244,1) 0%, rgba(39,120,184,1) 100%)
+	-webkit-box-shadow: 0px 11px 27px 0px rgba(0,0,0,0.25)
+	-moz-box-shadow: 0px 11px 27px 0px rgba(0,0,0,0.25)
+	box-shadow: 0px 11px 27px 0px rgba(0,0,0,0.25)
