@@ -19,6 +19,9 @@ body
 	height: 100vh
 	background-color: $body_bg
 
+h1, h2, p, ul
+	margin: 0px
+
 h1
 	font-size: $fontSize_h1
 	line-height: $lineHeight_h1
@@ -35,6 +38,9 @@ h2
 .title
 	color: $fontColorMain
 	font-family: $font-Gilroy-ExtraBold
+
+.green
+	color: $green
 
 .bg--grey
 	background-color: $grey
@@ -64,12 +70,13 @@ h2
 		content: ''
 		position: absolute
 		top: 0px
-		left: 0px
+		left: 6px
 		width: 41px
 		height: 54px
+		transform: rotate(-15deg)
 		background:
 			color: transparent
-			//image: url("")
+			image: url("../images/icons/ic-trend.png")
 			repeat: no-repeat
 			size: contain
 
@@ -91,3 +98,42 @@ h2
 	background: url("../images/content/bg1.png")
 	z-index: -1
 	filter: blur(5px)
+
+.list
+  font-family: $font-Roboto-Regular
+  font-size: 16px
+  margin-top: 45px
+  margin-bottom: 45px
+  padding: 0
+.list__item
+  list-style: none
+  margin-bottom: 20px
+  position: relative
+  padding-left: 40px
+  &:before
+    content: ''
+    width: 28px
+    height: 28px
+    background-repeat: no-repeat
+    background-size: 28px 28px
+    background-position: left top
+    position: absolute
+    top: 0px
+    left: 0px
+
+.comment
+	padding: 25px 15px
+	font-family: $font-Caveat-Regular
+	font-size: 20px
+	border: 1px solid #d1d1d1
+	border-radius: 5px
+	position: relative
+	&:after
+		position: absolute
+		content: ''
+		width: 55px
+		height: 40px
+		bottom: -10px
+		right: -15px
+		background-repeat: no-repeat
+		background-size: 55px 40px
