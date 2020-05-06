@@ -137,3 +137,25 @@ h2
 		right: -15px
 		background-repeat: no-repeat
 		background-size: 55px 40px
+
+.carousel-control-prev, .carousel-control-next
+	width: 30px
+	height: 30px
+	border-radius: 50%
+	background: $slider-control-color
+	top: calc(50% - 30px)
+	opacity: 1
+	left: 20px
+	&:hover
+		opacity: .85
+.carousel-control-next
+	left: calc(100% - 20px - 30px)
+
+.carousel-control-prev-icon, .carousel-control-next-icon
+	background:
+		image: url("../images/icons/icon_arrow.svg")
+		size: 8px
+		position: center
+		repeat: no-repeat
+.carousel-control-prev-icon
+	transform: rotate(180deg)
