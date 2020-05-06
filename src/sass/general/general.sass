@@ -19,8 +19,9 @@ body
 	height: 100vh
 	background-color: $body_bg
 
-h1, h2, p, ul
+h1, h2, h3, h4, p, ul
 	margin: 0px
+	padding: 0px
 
 h1
 	font-size: $fontSize_h1
@@ -30,6 +31,10 @@ h1
 h2
 	font-size: $fontSize_h2
 	line-height: $lineHeight_h2
+
+h3
+	font-size: $fontSize_h3
+	line-height: $lineHeight_h3
 
 .container
 	+laptop
@@ -89,6 +94,18 @@ h2
 	-moz-box-shadow: 0px 11px 27px 0px rgba(0,0,0,0.25)
 	box-shadow: 0px 11px 27px 0px rgba(0,0,0,0.25)
 
+.btn-close
+	padding: 0px
+	width: 15px
+	height: 15px
+	border-radius: 0px
+	box-shadow: none
+	background-color: transparent
+	//background-image: url(../images/ic_close.svg)
+	background-repeat: no-repeat
+	background-size: cover
+	transform: rotate(45deg)
+
 .section_background
 	position: absolute
 	left: 0
@@ -119,3 +136,50 @@ h2
     position: absolute
     top: 0px
     left: 0px
+
+.parallelogram
+	-webkit-transform: skew(-20deg)
+	-moz-transform: skew(-20deg)
+	-o-transform: skew(-20deg)
+	padding: 0 50px
+
+	.parallelogram-title
+		text-align: center
+		-webkit-transform: skew(20deg)
+		-moz-transform: skew(20deg)
+		-o-transform: skew(20deg)
+
+.db-bordered
+	border-radius: 10px
+	background-color: #FFFFFF
+	padding: 40px
+
+.o-form
+	.form-control
+		background-color: #e3e3e3
+		border-radius: 5px
+		color: #a9a9a9
+		height: 54px
+		text-align: center
+	.btn
+		width: 100%
+		height: 100%
+		font-family: $font-Gilroy-ExtraBold
+		font-size: 16px
+
+
+.ic-oimo
+	position: relative
+	&:before
+		content: ''
+		display: inline-block
+		position: absolute
+		top: -40px
+		right: 10px
+		width: 78px
+		height: 119px
+		background:
+			color: transparent
+			image: url("../images/icons/Gravity-Hard-Cover-Book-Mockup.png")
+			repeat: no-repeat
+			size: contain
