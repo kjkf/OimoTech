@@ -56,6 +56,10 @@ h3
 .text-upper
 	text-transform: uppercase
 
+.btn
+	&:hover
+		color: inherit
+
 .btn-green
 	background: rgb(101,196,115)
 	background: linear-gradient(-90deg, rgba(101,196,115,1) 0%, rgba(56,150,88,1) 150%)
@@ -68,6 +72,8 @@ h3
 	font-family: $font-Gilroy-Light
 	font-size: $fs_btn_green
 	color: $col_btn_green
+	&:hover
+		color: $col_btn_green
 
 .btn-ic
 	position: relative
@@ -177,21 +183,48 @@ h3
 		-moz-transform: skew(20deg)
 		-o-transform: skew(20deg)
 
-.db-bordered
+.shadow-blue-box
+  background: rgb(43,127,193)
+  background: linear-gradient(0deg, rgba(43,127,193,1) 0%, rgba(65,161,236,1) 100%)
+  -webkit-box-shadow: 11px 11px 27px 0px rgba(0,0,0,0.25)
+  -moz-box-shadow: 11px 11px 27px 0px rgba(0,0,0,0.25)
+  box-shadow: 11px 11px 27px 0px rgba(0,0,0,0.25)
+  border-radius: 5px
+
+.bl-db-bordered
 	border-radius: 10px
 	background-color: #FFFFFF
 	padding: 40px
+
+.bl-blue
+	display: flex
+	background: rgb(69,166,244)
+	background: linear-gradient(-90deg, rgba(69,166,244,1) 0%, rgba(39,120,184,1) 100%)
+	-webkit-box-shadow: 0px 11px 27px 0px rgba(0,0,0,0.25)
+	-moz-box-shadow: 0px 11px 27px 0px rgba(0,0,0,0.25)
+	box-shadow: 0px 11px 27px 0px rgba(0,0,0,0.25)
+	padding: 10px
+	border-radius: 4px
+	color: #FFFFFF
+	&__in
+		display: flex
+		flex-direction: column
+		border: 1px solid #71addd
+		border-radius: 4px
+		padding: 50px
+
 
 .o-form
 	.form-control
 		background-color: #e3e3e3
 		border-radius: 5px
+		border: 0px
 		color: #a9a9a9
 		height: 54px
 		text-align: center
 	.btn
 		width: 100%
-		height: 100%
+		height: 54px
 		font-family: $font-Gilroy-ExtraBold
 		font-size: 16px
 
@@ -211,6 +244,18 @@ h3
 			image: url("../images/icons/Gravity-Hard-Cover-Book-Mockup.png")
 			repeat: no-repeat
 			size: contain
+
+.line-bt
+	position: relative
+	&:after
+		content: ''
+		display: inline-block
+		position: absolute
+		bottom: 0px
+		left: calc((100% - 76%)/2)
+		width: 76%
+		border-top: 1px solid #c6c6c6
+
 .carousel-control-prev, .carousel-control-next
 	width: 30px
 	height: 30px
