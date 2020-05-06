@@ -1,4 +1,5 @@
 .header
+  margin: 50px auto 30px
   .container
     font-size: 12px
     line-height: 17px
@@ -52,3 +53,28 @@
   .btn
     width: 100%
     padding: 10px 10px 10px 40px
+
+.nav
+  display: inline-flex
+  font-family: $font-Gilroy-ExtraBold
+  font-size: 14px
+  padding: 20px 30px
+  background-color: #ffffff
+  border-radius: 5px
+  &-item
+    position: relative
+    &:before
+      content: ''
+      position: absolute
+      top: calc(50% - 4px)
+      left: 10px
+      width: 6px
+      height: 6px
+      border-radius: 50%
+      background-color: #4095b4
+  &-link
+    color: #2a2a2a
+    text-transform: uppercase
+    padding: 5px 20px 5px 19px
+    &.active, &:hover
+      color: #4095b4
