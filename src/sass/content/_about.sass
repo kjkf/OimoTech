@@ -1,0 +1,112 @@
+.about
+  .container
+    max-width: 1200px!important
+    margin-top: 60px
+.about-block
+  display: flex
+  flex-direction: row
+  justify-content: flex-start
+  align-items: center
+  position: relative
+  margin-bottom: 45px
+  &__caption
+    font-family: $font-Gilroy-Light
+    font-size: 30px
+    line-height: 1.16
+    position: absolute
+    width: 520px
+    outline-offset: -10px
+    box-shadow: 0px 11px 27px 0px rgba(0, 0, 0, 0.08)
+    outline: 1px solid #e8e8e8
+    border-radius: 5px
+    padding: 45px 40px 54px 40px
+    top: -51px
+    left: 0
+    background: white
+  &__text
+    margin-left: 250px
+    font-family: $font-Roboto-Regular
+    font-size: 16px
+    line-height: 1.5
+    border: 7px solid #017bdc
+    border-radius: 5px
+    padding: 55px 55px 55px 310px
+    &__bold
+      font-family: $font-Roboto-Bold
+
+.text__blue
+  font-family: $font-Gilroy-ExtraBold
+  font-size: 30px
+  color: #017bdc
+
+.about-infograf
+  display: flex
+  flex-direction: row
+  justify-content: flex-start
+  align-items: flex-start
+  flex-wrap: wrap
+  width: 100%
+  padding-left: 140px
+  position: relative
+  margin-bottom: 25px
+  &:before
+    width: 213px
+    height: 186px
+    content: ''
+    position: absolute
+    top: -85px
+    left: -10px
+    background-image: url('../images/icons/protection.png')
+    background-repeat: no-repeat
+    background-size: 213px 186px
+
+.infograf-block
+  display: flex
+  flex-direction: row
+  justify-content: center
+  max-width: 350px
+  margin:  0 11px 30px 11px
+  &:first-child
+    margin-left: 130px
+  &__num
+    display: flex
+    flex-grow: 1
+    font-family: $font-Gilroy-ExtraBold
+    font-size: 80px
+    color: #017bdc
+    text-align: right
+    padding: 0 3px
+  &__txt
+    display: flex
+    justify-content: center
+    align-items: center
+    font-family: $font-Gilroy-Light
+    font-size: 15px
+    text-align: left
+    max-width: 125px
+    padding: 0
+
+.about-footer
+  display: flex
+  flex-direction: row
+  justify-content: flex-start
+  align-items: flex-start
+  width: 100%
+  padding-left: 35px
+  padding-right: 35px
+  font-family: $font-Gilroy-Light
+  font-size: 30px
+  line-height: 1.1
+  &__text
+    //display: inline-flex
+    flex-grow: 1
+    padding-top: 15px
+  .comment
+    margin-left: 15px
+    margin-top: 0
+    min-width: 285px
+    &:after
+      bottom: -10px
+      right: -15px
+      background-image: url('../images/icons/RU-flag.png')
+      background-size: 55px 40px
