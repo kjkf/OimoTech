@@ -36,6 +36,11 @@ h3
 	font-size: $fontSize_h3
 	line-height: $lineHeight_h3
 
+h4
+	font-size: $fontSize_h4
+	line-height: $lineHeight_h4
+
+
 .container
 	+laptop
 		max-width: 1370px
@@ -168,6 +173,15 @@ h3
     top: 0px
     left: 0px
 
+.list--quest
+	.list__item:before
+		background-image: url("../images/icons/help.svg")
+		width: 16px
+		height: 16px
+		top: 4px
+		left: 22px
+		background-size: contain
+
 .comment
 	padding: 25px 15px
 	font-family: $font-Caveat-Regular
@@ -184,6 +198,26 @@ h3
 		right: -15px
 		background-repeat: no-repeat
 		background-size: 55px 40px
+
+.comment--wallet
+	&:after
+		width: 146px
+		height: 91px
+		bottom: -5px
+		right: -17px
+		transform: rotate(-178deg) scaleY(-1)
+		background-image: url("../images/icons/purse.png")
+		background-size: contain
+
+.comment--helmet
+	&:after
+		width: 84px
+		height: 63px
+		bottom: 33px
+		right: 37px
+		background-image: url("../images/icons/helmet.png")
+		background-size: contain
+
 
 .parallelogram
 	-webkit-transform: skew(-20deg)
@@ -205,6 +239,14 @@ h3
   box-shadow: 11px 11px 27px 0px rgba(0,0,0,0.25)
   border-radius: 5px
 
+.shadow-blue-box-s
+	background: rgb(69,166,244)
+	background: linear-gradient(-90deg, rgba(69,166,244,1) 0%, rgba(39,120,184,1) 150%)
+	-webkit-box-shadow: 0px 11px 27px 0px rgba(0,0,0,0.25)
+	-moz-box-shadow: 0px 11px 27px 0px rgba(0,0,0,0.25)
+	box-shadow: 0px 11px 27px 0px rgba(0,0,0,0.25)
+	border-radius: 3px
+
 .bl-db-bordered
 	border-radius: 10px
 	background-color: #FFFFFF
@@ -219,13 +261,14 @@ h3
 	box-shadow: 0px 11px 27px 0px rgba(0,0,0,0.25)
 	padding: 10px
 	border-radius: 4px
-	color: #FFFFFF
 	&__in
 		display: flex
 		flex-direction: column
 		border: 1px solid #71addd
 		border-radius: 4px
 		padding: 50px
+	.title
+		color: #FFFFFF
 
 
 .o-form
