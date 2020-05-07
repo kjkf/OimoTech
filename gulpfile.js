@@ -120,7 +120,12 @@ task("scripts", () => {
                 presets: ['@babel/env']
             })
         )
-        .pipe(uglify())
+        .on('error', function(e) {
+            console.log('>>> ERROR', e);
+            // emit here
+            this.emit('end');
+        })
+        .pipe(gulpif(env === 'prod', uglify()))
         .pipe(gulpif(env === 'dev', sourcemaps.write()))
         .pipe(dest('dist/public'))
         .pipe(reload({stream: true}))
