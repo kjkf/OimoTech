@@ -29,7 +29,7 @@
             };
 
             var _transformItem = function (direction) {
-
+                //console.log(direction);
                 if (direction === 'right') {
                     if ((_positionLeftItem + _wrapperWidth / _itemWidth - 1) >= position.getMax) {
                         _positionLeftItem = 0;
@@ -57,7 +57,7 @@
             var _controlClick = function (e) {
                 //if (e.target.classList.contains('slider__control')) {
                     e.preventDefault();
-                    var direction = e.target.classList.contains('carousel-control-next') ? 'right' : 'left';
+                var direction = e.currentTarget.classList.contains('carousel-control-next') ? 'right' : 'left';
                     if (!_step) {
                         _wrapperWidth = parseFloat(getComputedStyle(_sliderWrapper).width), // ширина обёртки
                         _itemWidth = parseFloat(getComputedStyle(_sliderItems[0]).width), // ширина одного элемента
@@ -121,4 +121,8 @@
     simpleSlider('#carousel-example-7');
     simpleSlider('#carousel-example-8');
     simpleSlider('#carousel-example-9');
+    simpleSlider('#carousel-example-10');
+    simpleSlider('#carousel-example-11');
+    simpleSlider('#carousel-example-12');
+    simpleSlider('#carousel-example-13');
 })();
