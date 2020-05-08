@@ -1,8 +1,10 @@
 .training
   margin-top: 70px
+  +phone-down
+    padding: 0 30px
   .container
     border-radius: 5px
-    padding: 51px 30px 65px 38px
+    padding: 51px 45px 65px 53px
     +laptop
       max-width: 1170px
 
@@ -11,6 +13,9 @@
     display: flex
     flex-direction: column
     z-index: 1
+    margin-bottom: 86px
+    +tablet-down
+      width: 100%
 
   &-right
     display: flex
@@ -31,7 +36,7 @@
     position: absolute
     width: 860px
     height: auto
-    bottom: -83px
+    bottom: -3px
     right: -23px
     img
       width: 100%
@@ -52,3 +57,128 @@
     width: 240px
     padding: 18px 60px 15px 23px
     line-height: 1.2
+    align-self: flex-start
+
+.training-step
+  &-in
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    +laptop-down
+      justify-content: center
+  &-item
+    display: flex
+    flex-direction: column
+    width: 320px
+    justify-content: flex-start
+    align-items: center
+    text-align: center
+    position: relative
+    &:after
+      content: ''
+      position: absolute
+      top: -8px
+      right: -24px
+      border-left: 1px solid #d1d1d1
+      height: 50%
+      +laptop-down
+        right: 0px
+      +phone-down
+        display: none
+
+    &:first-child
+      .training-step__num
+        padding-left: 87px
+        &:before
+          background-image: url("../images/icons/certification.png")
+          left: 50px
+
+    &:nth-child(2)
+      &:after
+        +laptop-down
+          display: none
+      .training-step__num
+        &:before
+          background-image: url("../images/icons/set-of-patterns.png")
+          width: 77px
+          height: 79px
+          transform: rotate(-150deg) scale(1.6)
+          left: -33px
+          top: -5px
+    &:nth-child(3)
+      &:after
+        display: none
+        +laptop-down
+          display: inline-block
+      .training-step__num
+        &:before
+          background-image: url("../images/icons/design-catalog.png")
+          width: 72px
+          height: 72px
+          left: 20px
+          top: 8px
+    &:nth-child(4)
+      margin-left: auto
+      margin-right: 40px
+      +laptop-down
+        margin: 0px
+      &:after
+        top: 6px
+        +laptop-down
+          display: none
+      +tablet-down
+        margin: 0px
+      .training-step__num
+        padding-left: 0px
+        &:before
+          background-image: url("../images/icons/выезд-нашего-специалиста.png")
+          width: 80px
+          height: 95px
+          left: -43px
+          top: -28px
+    &:nth-child(5)
+      margin-right: auto
+      margin-left: 40px
+      +laptop-down
+        margin: 0px
+      +tablet-down
+        margin: 0px
+      &:after
+        display: none
+      .training-step__num
+        padding-left: 0px
+        &:before
+          background-image: url("../images/icons/dostavka_v_srok.png")
+          width: 70px
+          height: 70px
+          left: -33px
+          top: 3px
+
+  &__num
+    position: relative
+    font-size: 68px
+    line-height: 1.2
+    color: $blue-text
+    margin-bottom: 6px
+    padding-left: 55px
+    &:before
+      content: ''
+      display: inline-block
+      position: absolute
+      top: 0px
+      left: 0px
+      width: 82px
+      height: 85px
+      background:
+        //color: red
+        //image: url()
+        repeat: no-repeat
+        size: contain
+  &__text
+    color: #677c91
+    line-height: 1.3
+    margin-bottom: 10px
+    +laptop-down
+      margin-bottom: 30px
+    b
+      color: #000000
