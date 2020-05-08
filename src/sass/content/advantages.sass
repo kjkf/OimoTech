@@ -7,14 +7,33 @@
     align-items: center
     color: #ffffff
     padding: 0 25px
+    +tablet-down
+      //justify-content: center
+      width: 100%
+      padding-left: calc((100% - 370px)/2)
 
-    .a-col
+    .item
       width: 35%
       max-width: 370px
       margin-right: 36px
+      position: relative
+      +tablet-down
+        width: 100% !important
+        margin-right: 0
+        max-height: 97px
+      &:last-child
+        margin-right: 0
+
+
+    .a-col
+      //width: 35%
+      max-width: 370px
       padding: 25px 60px 20px 115px
       font-family: $font-Gilroy-Light
       position: relative
+      +tablet-down
+        width: 100%!important
+        padding: 20px 60px 20px 89px
       &:before
         content: ''
         display: inline-block
@@ -28,6 +47,38 @@
           repeat: no-repeat
           position: center
           size: 64px 70px
+        +tablet-down
+          width: 56px
+          height: 64px
+          background-size: 56px 64px
+          left: 15px
+          top: 10px
+      &.protection
+        &:before
+          width: 75px
+          height: 73px
+          background:
+            image: url("../images/icons/protection.png")
+            size: 75px 73px
+          +tablet-down
+            width: 67px
+            height: 63px
+            background-size: 67px 63px
+            left: 5px
+
+      &.full-construction
+        &:before
+          width: 53px
+          height: 68px
+          transform: rotate(-15deg)
+          background:
+            image: url("../images/icons/full-construction.png")
+            size: 53px 68px
+          +tablet-down
+            width: 53px
+            height: 60px
+            background-size: 53px 60px
+
       .check-icon
         display: inline-block
         position: absolute
@@ -51,25 +102,13 @@
             position: center
             repeat: no-repeat
             size: 40px
-
-
-      &:last-child
-        margin-right: 0
-        &:before
-          width: 75px
-          height: 73px
-          background:
-            image: url("../images/icons/protection.png")
-            size: 75px 73px
-
-      &:nth-child(2)
-        &:before
-          width: 53px
-          height: 68px
-          transform: rotate(-15deg)
-          background:
-            image: url("../images/icons/full-construction.png")
-            size: 53px 68px
+          +tablet-down
+            width: 40px
+            height: 40px
+            background-size: 40px
+        +tablet-down
+          width: 40px
+          height: 40px
 
       .title--white
         color: #ffffff
@@ -91,3 +130,7 @@
           opacity: .31
           left: -18px
           top: -21px
+
+    .carousel-item .a-col
+      width: 100%
+      max-width: 370px

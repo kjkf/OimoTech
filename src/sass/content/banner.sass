@@ -1,29 +1,50 @@
 .banner
   margin-bottom: 60px
+  +tablet-down
+    margin-bottom: 30px
 
   .banner__cols
     display: flex
     justify-content: center
     align-items: stretch
+    +tablet-down
+      flex-direction: column
 
     .banner__col
       width: 50%
+      +tablet-down
+        width: 100%
       &--left
         margin-right: 59px
         padding: 110px 0px 0
+        +tablet-down
+          margin-right: 0
+          padding-top: 0px
+
   .banner__wrapper
     padding: 0 25px
+    +tablet-down
+      padding: 0
     .banner__title
-      font-size: 40px
+      //font-size: 40px
       line-height: 54px
+      +tablet-down
+        font-size: 26px
+        line-height: 32px
+
       &--blue
         color: $blue
         margin-bottom: 50px
+        +tablet-down
+          margin-bottom: 30px
 
     .banner__info-wrapper
       display: flex
       justify-content: flex-start
       align-items: center
+      +tablet-down
+        justify-content: space-between
+        margin-bottom: 25px
 
       .info
         max-width: 170px
@@ -36,6 +57,10 @@
         line-height: 30px
         margin-right: 55px
         position: relative
+        +tablet-down
+          font-size: 28px
+          line-height: .8 //14.48px
+          max-width: 139px
         &:before
           content: ''
           position: absolute
@@ -49,15 +74,25 @@
             size: 25px
           right: 9px
           bottom: 10px
+          +tablet-down
+            background-size: 20px
+            bottom: 8px
+            right: 6px
 
         &:last-child
           margin-right: 0
           max-width: 205px
+          +tablet-down
+            max-width: 170px
+          .info-text--small
+            width: 70%
           &:before
             width: 30px
             height: 30px
             top: 6px
             right: 0
+            +tablet-down
+              top: -3px
             background:
               image: url("../images/icons/cup.png")
               size: 30px
@@ -67,6 +102,9 @@
           line-height: 70px
           display: inline-block
           margin-right: 5px
+          +tablet-down
+            font-size: 55px
+            line-height: 1 // 29.87px
 
         .info-text--small
           font-size: 14px
@@ -74,6 +112,9 @@
           color: $fontColorMain
           display: inline-block
           font-family: $font-Gilroy-Light
+          +tablet-down
+            font-size: 12px
+            line-height: 12.75px
 
   .carousel
     .slide
@@ -85,12 +126,18 @@
       font-family: $font-Gilroy-ExtraBold
       text-align: center
 
+  .parallelogram
+    +tablet-down
+      padding: 0 20px
+      margin-bottom: 30px
 
   .parallelogram-title
     font-family: $font-Gilroy-Light
     font-size: 25px
     line-height: 60px
     color: #ffffff
+    +tablet-down
+      font-size: 16px
 
 
 
