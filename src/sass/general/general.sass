@@ -321,6 +321,9 @@ h4
 	top: calc(50% - 30px)
 	opacity: 1
 	left: 20px
+	+tablet-down
+		width: 18px
+		height: 18px
 	&:hover
 		opacity: .85
 .carousel-control-next
@@ -332,5 +335,21 @@ h4
 		size: 8px
 		position: center
 		repeat: no-repeat
+	+tablet-down
+		background-size: 7px
 .carousel-control-prev-icon
 	transform: rotate(180deg)
+
+.carousel-indicators
+	bottom: -60px
+	& li
+		background-color: #d1d1d1
+		width: 15px
+		height: 4px
+		margin-right: 5px
+
+		&:last-child
+			margin-right: 0
+
+		&.active
+			background-color: $slider-control-color

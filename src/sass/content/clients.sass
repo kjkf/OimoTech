@@ -2,10 +2,19 @@
   margin-bottom: 100px
 
   .carousel
-    .carousel-control-prev, .carousel-control-next
+    .carousel-indicators
+      display: none
+      +tablet-down
+        display: flex
+
+    .carousel-control-prev
       left: -50px
+      +tablet-down
+        left: -10px
     .carousel-control-next
       left: calc(100% + 20px)
+      +tablet-down
+        left: 98%
 
     .card
       border-color: transparent
@@ -40,8 +49,8 @@
           align-items: center
           padding: 18px 36px
           img
-            width: 100%
-            //height: 100%
+            width: auto
+            height: 100%
 
       .nurzaman
         .card-logo

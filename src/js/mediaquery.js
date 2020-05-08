@@ -9,9 +9,13 @@ $(function() {
 
     function handlerForMediaQueries(x) {
         if (mql768.matches) { // If media query matches
+            console.log('mql768.matches');
             makeAdvantagesSlider();
-        } else {
+            makeClientsSlider();
+        } else if (mql1200.matches) {
             removeAdvantagesSlider();
+            console.log('else');
+            removeClientsSlider(5);
         }
     }
 
@@ -74,29 +78,29 @@ $(function() {
         }
     }
 
-    function makeWorksSlider() {
-        const workList = works.querySelectorAll('.work-item');
-        let carouselItems = works.querySelectorAll('.carousel-item');
-        let indicatorWrapper = works.querySelector('.carousel-indicators');
+    function makeClientsSlider() {
+        const clientsList = clients.querySelectorAll('.client');
+        let carouselItems = clients.querySelectorAll('.carousel-item');
+        let indicatorWrapper = clients.querySelector('.carousel-indicators');
         let indicators = indicatorWrapper.querySelectorAll('li');
 
         removeItems(carouselItems);
         removeItems(indicators);
 
-        createCarouselRow(workList, works, 'works__multi-item');
+        createCarouselRow(clientsList, clients, 'multi-item-clients');
     }
 
-    function removeWorksSlider() {
-        const workList = works.querySelectorAll('.work-item');
-        let carouselItems = works.querySelectorAll('.carousel-item');
-        let indicatorWrapper = works.querySelector('.carousel-indicators');
+    function removeClientsSlider(cols) {
+        const clientsList = clients.querySelectorAll('.client');
+        let carouselItems = clients.querySelectorAll('.carousel-item');
+        let indicatorWrapper = clients.querySelector('.carousel-indicators');
         let indicators = indicatorWrapper.querySelectorAll('li');
 
         removeItems(carouselItems);
         removeItems(indicators);
 
-        let rowList = divideArrayForRow(workList, 3);
-        createCarouselRow(rowList, works, 'works__multi-item');
+        let rowList = divideArrayForRow(clientsList, cols);
+        createCarouselRow(rowList, clients, 'multi-item-clients');
     }
 
     function createCarouselRow(list, mainWrapper, mainId) {
