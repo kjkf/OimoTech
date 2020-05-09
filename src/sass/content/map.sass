@@ -1,8 +1,18 @@
 .footer
   position: relative
 
+  .map-wrapper
+    +tablet-down
+      flex-direction: column
+      align-items: center
+
   #map
     border-radius: 5px
+    width: 460px
+    height: 500px
+    +tablet-down
+      width: 340px
+      height: 370px
 
   .hintContent
     color: red
@@ -10,7 +20,12 @@
 
   .offices
     margin-right: 35px
+    +tablet-down
+      margin-right: 0
   .office
+    +tablet-down
+      flex-direction: column
+      align-items: center
     .p-2
       width: 270px
       height: 154px
@@ -19,3 +34,6 @@
       margin-bottom: 19px
       &:last-child
         margin-bottom: 0
+      +tablet-down
+        width: 340px
+        height: 200px

@@ -1,6 +1,7 @@
 $(function() {
     const advantages = document.querySelector("#advantages");
     const clients = document.querySelector("#multi-item-clients");
+    const example = document.querySelector("#multi-item-example");
 
     const mql1200 = window.matchMedia("(max-width: 1200px)");
     const mql768 = window.matchMedia("(max-width: 768px)");
@@ -9,12 +10,26 @@ $(function() {
 
     function handlerForMediaQueries(x) {
         if (mql768.matches) { // If media query matches
-            console.log('mql768.matches');
-            makeAdvantagesSlider();
             makeClientsSlider();
-        } else if (mql1200.matches) {
+            makeExampleSlider();
+        } else {
+            removeClientsSlider(5);
+            removeExampleSlider(3);
+        }
+    }
+
+    function handlerForMediaQueries576(x) {
+        if(mql576.matches) {
+            makeAdvantagesSlider();
+        } else {
             removeAdvantagesSlider();
-            console.log('else');
+        }
+    }
+
+    function handlerForMediaQueries1200(x) {
+        if(mql1200.matches) {
+            removeClientsSlider(3);
+        } else {
             removeClientsSlider(5);
         }
     }
@@ -102,6 +117,30 @@ $(function() {
         let rowList = divideArrayForRow(clientsList, cols);
         createCarouselRow(rowList, clients, 'multi-item-clients');
     }
+    function makeExampleSlider() {
+        const clientsList = example.querySelectorAll('.example-item');
+        let carouselItems = example.querySelectorAll('.carousel-item');
+        let indicatorWrapper = example.querySelector('.carousel-indicators');
+        let indicators = indicatorWrapper.querySelectorAll('li');
+
+        removeItems(carouselItems);
+        removeItems(indicators);
+
+        createCarouselRow(clientsList, example, 'multi-item-example');
+    }
+
+    function removeExampleSlider(cols) {
+        const clientsList = example.querySelectorAll('.example-item');
+        let carouselItems = example.querySelectorAll('.carousel-item');
+        let indicatorWrapper = example.querySelector('.carousel-indicators');
+        let indicators = indicatorWrapper.querySelectorAll('li');
+
+        removeItems(carouselItems);
+        removeItems(indicators);
+
+        let rowList = divideArrayForRow(clientsList, cols);
+        createCarouselRow(rowList, example, 'multi-item-example');
+    }
 
     function createCarouselRow(list, mainWrapper, mainId) {
         const inner = mainWrapper.querySelector('.carousel-inner');
@@ -173,8 +212,15 @@ $(function() {
     //===========================================
 
     handlerForMediaQueries();
+    handlerForMediaQueries576();
     mql768.addEventListener("change", () => {
         handlerForMediaQueries();
+    });
+    mql576.addEventListener("change", () => {
+        handlerForMediaQueries576();
+    });
+    mql1200.addEventListener("change", () => {
+        handlerForMediaQueries1200();
     });
 
 });

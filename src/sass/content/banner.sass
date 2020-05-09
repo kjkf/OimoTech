@@ -7,17 +7,19 @@
     display: flex
     justify-content: center
     align-items: stretch
-    +tablet-down
+    +ipad-down
       flex-direction: column
 
     .banner__col
       width: 50%
-      +tablet-down
+      +ipad-down
         width: 100%
       &--left
         margin-right: 59px
         padding: 110px 0px 0
-        +tablet-down
+        +laptop-down
+          padding-top: 10px
+        +ipad-down
           margin-right: 0
           padding-top: 0px
 
@@ -28,21 +30,27 @@
     .banner__title
       //font-size: 40px
       line-height: 54px
+      +laptop-down
+        font-size: 29px
+        line-height: 40px
+      +ipad-down
+        text-align: center
       +tablet-down
+        text-align: left
         font-size: 26px
         line-height: 32px
 
       &--blue
         color: $blue
         margin-bottom: 50px
-        +tablet-down
+        +ipad-down
           margin-bottom: 30px
 
     .banner__info-wrapper
       display: flex
       justify-content: flex-start
       align-items: center
-      +tablet-down
+      +ipad-down
         justify-content: space-between
         margin-bottom: 25px
 
@@ -57,6 +65,8 @@
         line-height: 30px
         margin-right: 55px
         position: relative
+        +phone-down
+          margin-right: 25px
         +tablet-down
           font-size: 28px
           line-height: .8 //14.48px
@@ -127,6 +137,9 @@
       text-align: center
 
   .parallelogram
+    +laptop-down
+      padding: 0
+      margin-bottom: 20px
     +tablet-down
       padding: 0 20px
       margin-bottom: 30px
@@ -136,8 +149,13 @@
     font-size: 25px
     line-height: 60px
     color: #ffffff
+    +laptop-down
+      font-size: 20px
     +tablet-down
       font-size: 16px
+    +phone-down
+      font-size: 14px
+
 
 
 
