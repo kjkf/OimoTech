@@ -10,11 +10,13 @@ $(function() {
 
     function handlerForMediaQueries(x) {
         if (mql768.matches) { // If media query matches
+            console.log('mql768.matches');
             makeClientsSlider();
             makeExampleSlider();
         } else {
-            removeClientsSlider(5);
-            removeExampleSlider(3);
+            console.log('mql768.matches else');
+            removeClientsSlider(3);
+            removeExampleSlider(2);
         }
     }
 
@@ -28,9 +30,13 @@ $(function() {
 
     function handlerForMediaQueries1200(x) {
         if(mql1200.matches) {
+            console.log('mql1200.matches');
             removeClientsSlider(3);
+            removeExampleSlider(2);
         } else {
+            console.log('mql1200.matches else');
             removeClientsSlider(5);
+            removeExampleSlider(3);
         }
     }
 
@@ -111,11 +117,14 @@ $(function() {
         let indicatorWrapper = clients.querySelector('.carousel-indicators');
         let indicators = indicatorWrapper.querySelectorAll('li');
 
+        console.log('removeClientsSlider', cols);
+        //console.log(carouselItems, clientsList);
+
         removeItems(carouselItems);
         removeItems(indicators);
 
         let rowList = divideArrayForRow(clientsList, cols);
-        createCarouselRow(rowList, clients, 'multi-item-clients');
+        createCarouselRow(rowList, clients, 'multi-item-clients', cols);
     }
     function makeExampleSlider() {
         const clientsList = example.querySelectorAll('.example-item');
@@ -183,11 +192,17 @@ $(function() {
 
     function divideArrayForRow(list, slidesInRow) {
         let rowsList = [];
+        let className = !slidesInRow ? '' : slidesInRow === 2 ? 'col-md-6' : slidesInRow === 3 ? 'col-md-4' : slidesInRow === 4 ? 'col-md-3' : '';
+        let oldClassName = getClassNameByMask(list[0].classList.value, 'col-md-\\d+'); //list[0].classList.value.match(/col-md-\d+/);
+        //console.log(slidesInRow, className, oldClassName);
         for (let i=0; i<list.length; i=i+slidesInRow) {
             let row = document.createElement('div');
             row.className = 'row';
+            if (slidesInRow === 5) row.classList.add('row-cols-5');
             for (let j=i; j<(i+slidesInRow); j++) {
                 if (j>=list.length) break;
+                if (oldClassName) list[j].classList.remove(oldClassName);
+                if (className) list[j].classList.add(className);
                 row.appendChild(list[j]);
             }
             rowsList.push(row);
@@ -209,18 +224,31 @@ $(function() {
         return ol;
     }
 
+    function getClassNameByMask(str, mask) {
+        if (!str) return '';
+        const regexp = new RegExp(mask);
+        let result = str.match(regexp);
+        return result ? result[0] : '';
+    }
+
     //===========================================
 
-    handlerForMediaQueries();
-    handlerForMediaQueries576();
+    if (window.innerWidth < 1200 && window.innerWidth > 768) {
+        handlerForMediaQueries1200();
+    } else if (window.innerWidth <=768 ) {
+        handlerForMediaQueries();
+    } else if (window.innerWidth <=576 ) {
+        handlerForMediaQueries576();
+    }
+
+    mql1200.addEventListener("change", () => {
+        handlerForMediaQueries1200();
+    });
     mql768.addEventListener("change", () => {
         handlerForMediaQueries();
     });
     mql576.addEventListener("change", () => {
         handlerForMediaQueries576();
-    });
-    mql1200.addEventListener("change", () => {
-        handlerForMediaQueries1200();
     });
 
 });
