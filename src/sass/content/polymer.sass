@@ -1,4 +1,7 @@
 .polymer
+  .container
+    +laptop
+      max-width: 1200px
   .title
     margin-bottom: 98px
     //font-size: 25px
@@ -6,20 +9,36 @@
 .polymer-descr
   width: $polymer_w
   margin-top: 45px
+  +tablet-down
+    width: 100%
   .bl-blue__in
     padding: 50px 46px 40px
+    +phone-down
+      padding: 41px 25px 20px
   .title
     line-height: 1.2
     margin-bottom: 18px
+    +phone-down
+      margin-bottom: 20px
   &__text
     line-height: 1.5
     padding-bottom: 25px
     margin-bottom: 19px
+    +phone-down
+      line-height: 2
   .o-form
     padding: 0px 20px
+    +phone-down
+      padding: 0px
     .title
       text-align: center
       margin-bottom: 30px
+      +phone-down
+        font-size: 20px
+        line-height: 1.5
+    .row
+      +phone-down
+        padding: 0px 20px
 
 .polymer-props
   display: flex
@@ -29,12 +48,22 @@
   height: 675px
   border-radius: 5px
   z-index: -1
-  left: -205px
+  left: -143px
   background:
     color: transparent
     image: url("../images/content/область-применения-полов-торговая-отрасль2.jpg")
     repeat: no-repeat
     size: cover
+  +laptop-down
+    width: 100%
+    left: 0px
+  +tablet-down
+    position: static
+  +phone-down
+    height: 470px
+    flex-direction: column
+    align-items: center
+    justify-content: center
 
 .polymer-prop
   display: flex
@@ -46,6 +75,11 @@
   height: 38px
   border-radius: 5px
   padding: 0px 15px
+  +phone-down
+    position: static
+    margin-bottom: 20px
+    &:last-child
+      margin-bottom: 0px
   &__text
     color: #FFFFFF
     text-transform: uppercase
@@ -58,6 +92,7 @@
     border-radius: 50%
     overflow: hidden
     animation: pulse3 2s infinite
+
   .parallelogram-title
     display: inline-flex
     align-items: center
@@ -65,28 +100,45 @@
 
   &:first-child
     top: 130px
-    left: 260px
+    left: 31%
+    +laptop-down
+      left: 21%
   &:nth-child(2)
     top: 150px
-    left: 535px
+    left: 66%
+    +laptop-down
+      left: 56%
   &:nth-child(3)
     top: 233px
-    left: 166px
+    left: 20%
+    +laptop-down
+      left: 10%
   &:nth-child(4)
     top: 257px
-    left: 480px
+    left: 58%
+    +laptop-down
+      left: 48%
   &:nth-child(5)
     top: 344px
-    left: 238px
+    left: 29%
+    +laptop-down
+      left: 19%
   &:nth-child(6)
     top: 362px
-    left: 540px
+    left: 65%
+    +laptop-down
+      left: 55%
   &:nth-child(7)
     top: 437px
-    left: 383px
+    left: 46%
+    +laptop-down
+      left: 36%
+  +phone-down
+    left: 25% !important
 
 .polymer-wrap
   margin-bottom: 80px
+  margin-top: 114px
 
 
 
