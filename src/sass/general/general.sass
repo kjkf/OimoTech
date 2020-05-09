@@ -18,6 +18,8 @@ body
 	padding: 0
 	height: 100vh
 	background-color: $body_bg
+	+phone-down
+		font-size: 12px
 
 h1, h2, h3, h4, p, ul
 	margin: 0px
@@ -27,10 +29,14 @@ h1
 	font-size: $fontSize_h1
 	line-height: $lineHeight_h1
 	font-weight: normal
+	+phone-down
+    	font-size: 26px
 
 h2
 	font-size: $fontSize_h2
 	line-height: $lineHeight_h2
+	+phone-down
+		font-size: 20px
 
 h3
 	font-size: $fontSize_h3
@@ -68,9 +74,6 @@ h4
 .red-text
 	color: $red-text
 
-.bold-text
-	font-family: $font-Gilroy-ExtraBold
-	font-weight: bold
 
 .text-upper
 	text-transform: uppercase
@@ -82,17 +85,18 @@ h4
 .btn-green
 	background: rgb(101,196,115)
 	background: linear-gradient(-90deg, rgba(101,196,115,1) 0%, rgba(56,150,88,1) 150%)
-
 	-webkit-box-shadow: 0px 5px 0px 0px rgba(48,125,71,1)
 	-moz-box-shadow: 0px 5px 0px 0px rgba(48,125,71,1)
 	box-shadow: 0px 5px 0px 0px rgba(48,125,71,1)
-
-	border-radius: 10px
+	border-radius: 4px
 	font-family: $font-Gilroy-Light
 	font-size: $fs_btn_green
 	color: $col_btn_green
 	&:hover
 		color: $col_btn_green
+
+.btn-green-l
+	border-radius: 10px
 
 .btn-ic
 	position: relative
@@ -218,6 +222,15 @@ h4
 		background-image: url("../images/icons/helmet.png")
 		background-size: contain
 
+.comment--hat
+	&:after
+		width: 81px
+		height: 80px
+		bottom: -45px
+		right: 3px
+		background-image: url("../images/icons/hat.png")
+		background-size: contain
+
 
 .parallelogram
 	-webkit-transform: skew(-20deg)
@@ -261,6 +274,7 @@ h4
 	box-shadow: 0px 11px 27px 0px rgba(0,0,0,0.25)
 	padding: 10px
 	border-radius: 4px
+	color: #FFFFFF
 	&__in
 		display: flex
 		flex-direction: column

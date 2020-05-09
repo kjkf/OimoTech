@@ -1,0 +1,53 @@
+.get-pricelist
+  .get-pricelist-form
+    padding: 40px 40px 40px 45px
+    margin-left: 112px
+    .title
+      padding-right: 115px
+      margin-bottom: 8px
+
+.get-pricelist-form
+  border-radius: 8px
+  padding: 50px 40px 40px 45px
+  width: 616px
+  height: 257px
+  z-index: 1
+  font-size: 14px
+  .title
+    line-height: 1.3
+    margin-bottom: 45px
+  p
+    margin-bottom: 32px
+
+
+.get-pricelist__img
+  position: relative
+  z-index: 0
+  .img-wrap
+    position: absolute
+    top: -123px
+    left: -185px
+    width: 680px
+    height: 406px
+    transform: rotate(21deg)
+  img
+    width: 100%
+    height: auto
+
+
+.catalog
+  position: relative
+  &:after
+    content: ''
+    position: absolute
+    display: inline-block
+    top: -37px
+    left: -220px
+    width: 680px
+    height: 406px
+      transform: scale(1.3) rotate(21deg)
+    background:
+      color: transparent
+      image: url("../images/icons/catalog.png")
+      size: contain
+      repeat: no-repeat
