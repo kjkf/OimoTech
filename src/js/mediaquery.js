@@ -2,6 +2,7 @@ $(function() {
     const advantages = document.querySelector("#advantages");
     const clients = document.querySelector("#multi-item-clients");
     const example = document.querySelector("#multi-item-example");
+    const rawMaterial = document.querySelector("#materials-block");
 
     const mql1200 = window.matchMedia("(max-width: 1200px)");
     const mql768 = window.matchMedia("(max-width: 768px)");
@@ -22,9 +23,12 @@ $(function() {
 
     function handlerForMediaQueries576(x) {
         if(mql576.matches) {
+            console.log('mql576.matches');
             makeAdvantagesSlider();
+            makeRawMaterialSlider();
         } else {
             removeAdvantagesSlider();
+            removeRawMaterialSlider();
         }
     }
 
@@ -92,6 +96,53 @@ $(function() {
             stepsList.forEach(function (step) {
                 step.classList.remove("carousel-item");
                 step.classList.add("item");
+                //step.classList.add("w-25");
+                if (step.classList.contains('active')) step.classList.remove('active');
+            });
+
+        }
+    }
+
+    function makeRawMaterialSlider() {
+        rawMaterial.classList.add("carousel");
+        rawMaterial.classList.add("slide");
+        rawMaterial.dataset.ride = 'carousel';
+        let indicatorWrapper = rawMaterial.querySelector('.carousel-indicators');
+        if (indicatorWrapper) indicatorWrapper.remove();
+
+        const rawMaterialInner = rawMaterial.querySelector('.materials-block-inner');
+        rawMaterialInner.classList.add("carousel-inner");
+        rawMaterialInner.classList.remove("materials-block-inner");
+
+        let stepsList = rawMaterial.querySelectorAll(".materials-block-item");
+        stepsList.forEach(function (step) {
+            step.classList.add("carousel-item");
+            step.classList.remove("materials-block-item");
+            //step.classList.remove("w-25");
+        });
+        const indicator = createIndicatorsForSimpleSlider(stepsList.length, 'materials-block');
+        rawMaterial.appendChild(indicator);
+        stepsList[0].classList.add('active');
+    }
+
+    function removeRawMaterialSlider() {
+        rawMaterial.classList.remove("carousel");
+        rawMaterial.classList.remove("slide");
+        rawMaterial.dataset.ride = '';
+
+        const rawMaterialInner = rawMaterial.querySelector('.carousel-inner');
+        if(rawMaterialInner) {
+            rawMaterialInner.classList.remove("carousel-inner");
+            rawMaterialInner.classList.add("materials-block-inner");
+        }
+
+
+        let stepsList = rawMaterial.querySelectorAll(".carousel-item");
+
+        if (stepsList.length > 0)  {
+            stepsList.forEach(function (step) {
+                step.classList.remove("carousel-item");
+                step.classList.add("materials-block-item");
                 //step.classList.add("w-25");
                 if (step.classList.contains('active')) step.classList.remove('active');
             });
@@ -210,12 +261,15 @@ $(function() {
         return rowsList;
     }
 
-    function createIndicatorsForSimpleSlider(num) {
+    function createIndicatorsForSimpleSlider(num, carouselId) {
+        console.log('createIndicatorsForSimpleSlider', num);
         let ol = document.createElement('ol');
-        ol.className = 'indicators';
-        for (i = 0; i<num; i++) {
+        ol.className = 'carousel-indicators';
+        for (let i = 0; i<num; i++) {
             let li = document.createElement('li');
+            //data-target="#materials-block"
             li.dataset.slideTo = i;
+            li.dataset.target = `#${carouselId}`;
             if( i === 0 ) li.className="active";
 
             ol.appendChild(li);
@@ -235,9 +289,9 @@ $(function() {
 
     if (window.innerWidth < 1200 && window.innerWidth > 768) {
         handlerForMediaQueries1200();
-    } else if (window.innerWidth <=768 ) {
+    } else if (window.innerWidth <= 768 &&  window.innerWidth > 576) {
         handlerForMediaQueries();
-    } else if (window.innerWidth <=576 ) {
+    } else if (window.innerWidth <= 576 ) {
         handlerForMediaQueries576();
     }
 

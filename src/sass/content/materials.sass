@@ -15,7 +15,20 @@
     color: #017bdc
     text-transform: uppercase
     text-align: center
-.materials-block-wrapper
+  #materials-block
+    position: relative
+
+    .carousel-control-prev, .carousel-control-next
+      display: none
+      +phone-down
+        display: block
+        top: calc(100% + 22px)
+        left: 7%
+    .carousel-control-next
+      left: 90%
+    .carousel-item
+      padding-left: calc(50% - 108px)
+//.materials-block-wrapper
   margin-top: 40px
   width: 100%
   display: flex

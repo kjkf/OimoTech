@@ -364,6 +364,9 @@ h4
 	transform: rotate(180deg)
 
 .carousel-indicators
+	display: none
+	+phone-down
+		display: flex
 	bottom: -60px
 	& li
 		background-color: #d1d1d1
