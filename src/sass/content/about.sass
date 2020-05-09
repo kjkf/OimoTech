@@ -1,7 +1,17 @@
 .about
+  +tablet-down
+    width: 100%
+    margin: 0
+    padding: 0
   .container
     max-width: 1200px!important
-    margin-top: 60px
+    margin-top: 120px
+    margin-bottom: 15px
+    +tablet-down
+      width: 100%
+      margin: 60px 0 0 0
+      padding: 0 30px
+
 .about-block
   display: flex
   flex-direction: row
@@ -9,6 +19,10 @@
   align-items: center
   position: relative
   margin-bottom: 45px
+  width: 100%
+  +tablet-down
+    flex-direction: column
+    justify-content: flex-start
   &__caption
     font-family: $font-Gilroy-Light
     font-size: 30px
@@ -23,6 +37,32 @@
     top: -51px
     left: 0
     background: white
+    +tablet-down
+      width: 100%
+      position: relative
+      top: 0
+      left: 0
+      margin-bottom: 30px
+      font-size: 20px
+      box-shadow: 0px 11px 27px 0px rgba(0, 0, 0, 0.08)
+    &:after
+      width: 213px
+      height: 186px
+      content: ''
+      position: absolute
+      top: 260px
+      left: -10px
+      background-image: url('../images/icons/protection.png')
+      background-repeat: no-repeat
+      background-size: 213px 186px
+      +tablet-down
+        width: 85px
+        height: 80px
+        background-size: 85px 80px
+        top: auto
+        left: auto
+        right: -15px
+        bottom: -10px
   &__text
     margin-left: 250px
     font-family: $font-Roboto-Regular
@@ -31,13 +71,12 @@
     border: 7px solid #017bdc
     border-radius: 5px
     padding: 55px 55px 55px 310px
+    +tablet-down
+      width: 100%
+      margin: 0
+      padding: 35px
     &__bold
       font-family: $font-Roboto-Bold
-
-// .text__blue
-//   font-family: $font-Gilroy-ExtraBold
-//   font-size: 30px
-//   color: #017bdc
 
 .about-infograf
   display: flex
@@ -48,17 +87,16 @@
   width: 100%
   padding-left: 140px
   position: relative
+  margin-left: 130px
   margin-bottom: 25px
-  &:before
-    width: 213px
-    height: 186px
-    content: ''
-    position: absolute
-    top: -85px
-    left: -10px
-    background-image: url('../images/icons/protection.png')
-    background-repeat: no-repeat
-    background-size: 213px 186px
+  +tablet-down
+    padding: 0
+    justify-content: space-between
+    align-items: center
+    margin: 0
+
+.about-infograf_row2
+  margin-left: 0px
 
 .infograf-block
   display: flex
@@ -66,16 +104,18 @@
   justify-content: center
   max-width: 350px
   margin:  0 11px 30px 11px
-  &:first-child
-    margin-left: 130px
   &__num
     display: flex
+    flex-direction: row
+    justify-content: flex-end
     flex-grow: 1
     font-family: $font-Gilroy-ExtraBold
     font-size: 80px
     color: #017bdc
     text-align: right
     padding: 0 3px
+    +tablet-down
+      font-size: 50px
   &__txt
     display: flex
     justify-content: center
@@ -85,6 +125,40 @@
     text-align: left
     max-width: 125px
     padding: 0
+    +tablet-down
+      font-size: 12px
+      max-width: 100px
+
+.about-infograf
+  +tablet-down
+    .infograf-block
+      margin: 0
+      max-width: 250px
+      &:first-child
+        margin: 0
+
+.about-infograf_row2
+  +tablet-down
+    padding: 0
+    justify-content: space-between
+    align-items: center
+    margin-top: 10px
+    margin-bottom: 40px
+    .infograf-block
+        margin: 10px 0 0 0
+        max-width: 250px
+        &:first-child
+          margin-left: 0px
+        &:nth-child(4)
+          order: 2
+        &:nth-child(3)
+          order: 1
+        &:nth-child(2)
+          order: 3
+          width: 100%
+        &:nth-child(1)
+          order: 4
+          width: 100%
 
 .about-footer
   display: flex
@@ -92,19 +166,30 @@
   justify-content: flex-start
   align-items: flex-start
   width: 100%
-  padding-left: 35px
-  padding-right: 35px
+  padding: 0 35px
   font-family: $font-Gilroy-Light
   font-size: 30px
   line-height: 1.1
+  +tablet-down
+    flex-direction: column
+    justify-content: center
+    padding: 0 30px
   &__text
-    //display: inline-flex
     flex-grow: 1
     padding-top: 15px
+    +tablet-down
+      width: 100%
+      font-size: 20px
+      margin-bottom: 25px
   .comment
     margin-left: 15px
     margin-top: 0
     min-width: 285px
+    +tablet-down
+      width: 280px
+      font-size: 20px
+      margin: 0
+      align-self: flex-end
     &:after
       bottom: -10px
       right: -15px

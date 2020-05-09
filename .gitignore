@@ -12,3 +12,4 @@ package-lock.json
 *.xml
 .DS_Store
 index_botablock.html
+temp.html

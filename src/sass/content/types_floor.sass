@@ -1,13 +1,17 @@
 .types-floor
+  margin-bottom: 60px
   .container
     max-width: 1170px
-    padding: 60px 45px 0
+    padding: 60px 30px
   &__title
     font-family: $font-Roboto-Bold
     font-size: 20px
     color: #017bdc
     text-align: left
-
+    +tablet-down
+      font-size: 16px
+  .title
+    margin-left: 10px
   .col
     padding-left: 0
     padding-right: 0
@@ -18,45 +22,77 @@
     align-items: center
     background-color: #ffffff
     border-radius: 5px
-    margin-right: 3px
+    //margin-right: 3px
     margin-top: 50px
+    +tablet-down
+      flex-direction: column
+      justify-content: center
+
   &-content
     display: flex
-    flex-direction: column
+    flex-direction: row
     justify-content: center
-    align-items: center
-    padding: 25px 50px!important
+    align-items: flex-start
+    padding: 25px 45px
+    font-family: $font-Roboto-Regular
+    font-size: 16px
+    line-height: 1.5
+    +tablet-down
+      padding: 0
+      margin: 0
+      flex-direction: column
+      justify-content: flex-start
+      align-items: flex-start
+      font-size: 12px
+    &__col
+      width: 50%
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: flex-start
+      +tablet-down
+        width: 100%
     &__img
-      margin-top: 25px
-      margin-bottom: 35px
+      margin-top: 30px
+      margin-bottom: 40px
       display: flex
       width: 470px
       height: 350px
       border-radius: 5px
+      +tablet-down
+        width: 100%
+        margin-bottom: 30px
   &-objects
     display: flex
     flex-direction: column
     justify-content: center
     align-items: left
     margin-left: 5px
-    margin-top: 20px
+    margin-top: 30px
+    +tablet-down
+      margin: 15px 0 0 0
     .types-floor__title
       margin-left: 20px
-      margin-bottom: 5px
+      margin-bottom: 10px
+      +tablet-down
+        margin: 0 0 5px 0
+
+
   &-descr
     display: flex
     flex-direction: column
     justify-content: center
     align-items: left
-    margin-top: 20px
     line-height: 1.5
     .types-floor__title
-      margin-bottom: 15px
+      margin-bottom: 10px
 
   .list
-    margin-top: 10px
+    margin: 0 0 45px 0
     line-height: 1.43
-    margin-bottom: 55px
+    +tablet-down
+      font-size: 12px
+      margin: 0 0 15px 0
     &__item
       padding-left: 25px
       margin-bottom: 12px
@@ -77,10 +113,13 @@
   justify-content: center
   align-items: center
   background-color: #ffffff
-  padding: 10px 10px 0px 10px
+  padding: 10px 0px
   margin: 0
   border-radius: 5px
   list-style: none
+  +tablet-down
+    flex-direction: column
+    justify-content: center
   .nav-item
     &:before
       content: none
@@ -100,6 +139,10 @@
     font-size: 18px!important
     text-transform: none!important
     font-weight: normal!important
+    +tablet-down
+      font-size: 14px!important
+      height: 50px
+      margin: 5px 0
 
   .active
     color: #ffffff
