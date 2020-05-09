@@ -1,9 +1,16 @@
 .choice
+  margin-top: 58px
+  margin-bottom: 60px
+  .container
+    +laptop
+      max-width: 1200px
   &__img
     width: 250px
     height: 250px
     margin-bottom: 39px
     margin-top: 15px
+    +tablet-down
+      margin-left: -104px
     img
       margin-left: 95px
       margin-top: 30px
@@ -11,6 +18,9 @@
   .comment
     width: 86%
     line-height: 1.2
+    +phone-down
+      width: 100%
+      margin-bottom: 24px
 
   .comment--wallet
     margin-bottom: 68px
@@ -18,54 +28,111 @@
 
   .comment--helmet
     padding: 18px 130px 23px 34px
+    +tablet-down
+      margin-bottom: 25px
+      padding-right: 100px
 
 .choice-left
   display: flex
   flex-direction: column
+  padding-left: 50px
+  +tablet-down
+    padding-left: 15px
+    align-items: center
   .title
     line-height: 1.2
     margin-right: -5px
     margin-bottom: 15px
+    +tablet-down
+      margin-right: 0px
+      margin-bottom: 25px
+      width: 83%
   p
     line-height: 1.5
     margin-bottom: 35px
+    +tablet-down
+      width: 83%
 
 .choice-right
+  padding: 0px
+  +laptop-down
+    padding: 0px 15px
   &>.title
     line-height: 1.2
     margin-left: -15px
-    width: 65%
+    width: 80%
+    +tablet-down
+      width: 83%
+      margin: 0px auto
+    +phone-down
+      width: 90%
+
   .list
     margin-top: 40px
     margin-bottom: 81px
-    width: 60%
+    width: 75%
+    +tablet-down
+      margin-top: 20px
+      width: 85%
+
+    +phone-down
+      width: 100%
+
     &__item
       line-height: 1.5
       padding-left: 45px
       margin-bottom: 12px
+      +phone-down
+        padding-left: 25px
+      &:before
+        +phone-down
+          left: 2px
 
 .choice-form
+  width: 87.5%
   margin-left: 40px
-  width: 70.5%
+  +phone-down
+    width: 100%
+    margin-left: 0px
   .bl-blue__in
     padding: 65px 40px 70px 40px
+    +phone-down
+      padding: 28px 35px 30px 40px
   .title
     line-height: 1.5
     margin-bottom: 31px
+    +phone-down
+      line-height: 1.4
+      margin-left: 5px
+      margin-bottom: 18px
   &__img
     position: relative
+    +phone-down
+      height: 243px
     .img-wrap
       width: 286px
       height: 440px
       position: absolute
       top: -110px
       left: -45px
+      +tablet-down
+        top: unset
+        left: unset
+        bottom: -70px
+        right: -40px
+      +phone-down
+        width: 160px
+        height: 243px
+        top: 18px
+        left: 60px
     img
       width: 100%
       height: auto
 
   .choice-form__form
     width: 58%
+    +phone-down
+      width: 100%
 
 
 
