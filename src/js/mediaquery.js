@@ -3,6 +3,7 @@ $(function() {
     const clients = document.querySelector("#multi-item-clients");
     const example = document.querySelector("#multi-item-example");
     const rawMaterial = document.querySelector("#materials-block");
+    const applArea = document.querySelector("#appl-area-block");
 
     const mql1200 = window.matchMedia("(max-width: 1200px)");
     const mql768 = window.matchMedia("(max-width: 768px)");
@@ -26,9 +27,11 @@ $(function() {
             console.log('mql576.matches');
             makeAdvantagesSlider();
             makeRawMaterialSlider();
+            makeApplAreaSlider();
         } else {
             removeAdvantagesSlider();
             removeRawMaterialSlider();
+            removeApplAreaSlider();
         }
     }
 
@@ -144,6 +147,53 @@ $(function() {
                 step.classList.remove("carousel-item");
                 step.classList.add("materials-block-item");
                 //step.classList.add("w-25");
+                if (step.classList.contains('active')) step.classList.remove('active');
+            });
+
+        }
+    }
+
+    function makeApplAreaSlider() {
+        applArea.classList.add("carousel");
+        applArea.classList.add("slide");
+        applArea.dataset.ride = 'carousel';
+        let indicatorWrapper = applArea.querySelector('.carousel-indicators');
+        if (indicatorWrapper) indicatorWrapper.remove();
+
+        const applAreaInner = applArea.querySelector('.appl-area-block-inner');
+        applAreaInner.classList.add("carousel-inner");
+        applAreaInner.classList.remove("appl-area-block-inner");
+
+        let stepsList = applArea.querySelectorAll(".appl-area-block-item");
+        stepsList.forEach(function (step) {
+            step.classList.add("carousel-item");
+            step.classList.remove("appl-area-block-item");
+            step.classList.remove("col-md-3");
+        });
+        const indicator = createIndicatorsForSimpleSlider(stepsList.length, 'appl-area-block');
+        applArea.appendChild(indicator);
+        stepsList[0].classList.add('active');
+    }
+
+    function removeApplAreaSlider() {
+        applArea.classList.remove("carousel");
+        applArea.classList.remove("slide");
+        applArea.dataset.ride = '';
+
+        const applAreaInner = applArea.querySelector('.carousel-inner');
+        if(applAreaInner) {
+            applAreaInner.classList.remove("carousel-inner");
+            applAreaInner.classList.add("appl-area-block-inner");
+        }
+
+
+        let stepsList = applArea.querySelectorAll(".carousel-item");
+
+        if (stepsList.length > 0)  {
+            stepsList.forEach(function (step) {
+                step.classList.remove("carousel-item");
+                step.classList.add("appl-area-block-item");
+                step.classList.add("col-md-3");
                 if (step.classList.contains('active')) step.classList.remove('active');
             });
 
