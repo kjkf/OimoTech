@@ -430,6 +430,7 @@ $(function() {
     }
     const typesFloorContents = document.querySelectorAll('.types-floor-content');
     function typesFloor768less() {
+      //console.log(typesFloor768less);
         typesFloorContents.forEach(floorContent => {
             const typesFloorCols = floorContent.querySelectorAll('.types-floor-content__col');
             const floorDescr = typesFloorCols[0].querySelector('.types-floor-descr');

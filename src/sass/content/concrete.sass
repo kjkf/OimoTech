@@ -1,11 +1,16 @@
 .concrete
   .container
     margin-top: 60px
-    margin-bottom: 60px
+    //margin-bottom: 60px
     max-width: 1200px
+    +tablet-down
+      max-width: 720px
   .list
     padding-left: 20px
     margin: 40px 0 45px 0
+    +laptop-down
+      font-size: 14px
+      margin-top: 20px
     +tablet-down
       font-size: 12px
       padding-left: 0
@@ -14,6 +19,8 @@
     margin-bottom: 35px
     padding-left: 45px
     line-height: 1.35
+    +laptop-down
+      margin-bottom: 20px
     +tablet-down
       margin-bottom: 25px
     &:last-child
@@ -42,6 +49,8 @@
   font-size: 30px
   line-height: 1.18
   margin-left: 60px
+  +laptop-down
+    font-size: 25px
   +tablet-down
     margin: 0
     font-size: 20px
@@ -58,21 +67,24 @@
     +tablet-down
       width: 100%
   &__img
-    padding: 0 0 0 60px
+    padding-left: 60px
     display: flex
     flex-direction: column
     justify-content: flex-start
     align-items: flex-start
+    +laptop-down
+      padding-left: 20px
     .block__img
       width: 500px
       height: 535px
       border-radius: 5px
-      +tablet-down
+      +laptop-down
         width: 310px
         height: 330px
+      +tablet-down
         margin: 0
         position: absolute
-        top: 180px
+        top: 21%
         left: 15px
 
   &__footer
