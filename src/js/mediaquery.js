@@ -16,12 +16,10 @@ $(function() {
             console.log('mql768.matches');
             makeClientsSlider();
             makeExampleSlider();
-            typesFloor768less();
         } else {
             console.log('mql768.matches else');
             removeClientsSlider(3);
             removeExampleSlider(2);
-            typesFloor756more();
         }
     }
 
@@ -47,10 +45,12 @@ $(function() {
             console.log('mql1200.matches');
             removeClientsSlider(3);
             removeExampleSlider(2);
+            typesFloor768less();
         } else {
             console.log('mql1200.matches else');
             removeClientsSlider(5);
             removeExampleSlider(3);
+            typesFloor756more();
         }
     }
 
