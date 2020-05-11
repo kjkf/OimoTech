@@ -143,18 +143,22 @@
       max-width: 100px
 
 .about-infograf
-  //+tablet-down
+
   +laptop-down
     .infograf-block
       margin: 0
       max-width: 250px
       &:first-child
         margin: 0
+  // +tablet-down
+  //   width: 80%
+  //   justify-content: space-between
 
 .about-infograf_row2
   +laptop-down
     margin-bottom: 40px
   +tablet-down
+    width: 100%
     padding: 0
     justify-content: space-between
     align-items: center
