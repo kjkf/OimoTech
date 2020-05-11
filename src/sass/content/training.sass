@@ -90,7 +90,10 @@
   .carousel-indicators
     bottom: -30px
   .carousel-control-prev, .carousel-control-next
-    top: 96%
+    display: none
+    +phone-down
+      display: block
+      top: 96%
   .carousel-control-next
     left: calc(100% - 20px)
 

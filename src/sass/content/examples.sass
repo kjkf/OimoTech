@@ -18,8 +18,9 @@
     line-height: 35px
     width: 80%
     padding: 20px 0 0
-    +tablet-down
+    +laptop-down
       width: 100%
+    +tablet-down
       font-size: 20px
       line-height: 26px
       margin-bottom: 25px
@@ -35,7 +36,7 @@
     border-radius: 5px
     padding: 20px
     width: 45%
-    +tablet-down
+    +laptop-down
       width: 100%
 
   #multi-item-example
@@ -57,6 +58,9 @@
       border-radius: 5px
       background: $grey
       padding: 40px 40px 17px
+      +laptop-down
+        max-height: 320px
+        height: 320px
 
       .card-title
         font-size: 14px
