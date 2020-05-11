@@ -1,5 +1,6 @@
 .about
-  +tablet-down
+  //+tablet-down
+  +laptop-down
     width: 100%
     margin: 0
     padding: 0
@@ -7,7 +8,8 @@
     max-width: 1200px!important
     margin-top: 120px
     margin-bottom: 15px
-    +tablet-down
+    //+tablet-down
+    +laptop-down
       width: 100%
       margin: 60px 0 0 0
       padding: 0 30px
@@ -20,7 +22,8 @@
   position: relative
   margin-bottom: 45px
   width: 100%
-  +tablet-down
+  //+tablet-down
+  +laptop-down
     flex-direction: column
     justify-content: flex-start
   &__caption
@@ -37,14 +40,16 @@
     top: -51px
     left: 0
     background: white
-    +tablet-down
+    //+tablet-down
+    +laptop-down
       width: 100%
       position: relative
       top: 0
       left: 0
       margin-bottom: 30px
-      font-size: 20px
       box-shadow: 0px 11px 27px 0px rgba(0, 0, 0, 0.08)
+    +tablet-down
+      font-size: 20px
     &:after
       width: 213px
       height: 186px
@@ -55,7 +60,8 @@
       background-image: url('../images/icons/protection.png')
       background-repeat: no-repeat
       background-size: 213px 186px
-      +tablet-down
+      //+tablet-down
+      +laptop-down
         width: 85px
         height: 80px
         background-size: 85px 80px
@@ -71,7 +77,8 @@
     border: 7px solid #017bdc
     border-radius: 5px
     padding: 55px 55px 55px 310px
-    +tablet-down
+    //+tablet-down
+    +laptop-down
       width: 100%
       margin: 0
       padding: 35px
@@ -89,7 +96,11 @@
   position: relative
   margin-left: 130px
   margin-bottom: 25px
-  +tablet-down
+  // +laptop-down
+  //   //margin-left: 100px
+  //   padding-left: 100px
+  // +tablet-down
+  +laptop-down
     padding: 0
     justify-content: space-between
     align-items: center
@@ -114,7 +125,8 @@
     color: #017bdc
     text-align: right
     padding: 0 3px
-    +tablet-down
+    //+tablet-down
+    +laptop-down
       font-size: 50px
   &__txt
     display: flex
@@ -125,12 +137,14 @@
     text-align: left
     max-width: 125px
     padding: 0
-    +tablet-down
+    //+tablet-down
+    +laptop-down
       font-size: 12px
       max-width: 100px
 
 .about-infograf
-  +tablet-down
+  //+tablet-down
+  +laptop-down
     .infograf-block
       margin: 0
       max-width: 250px
@@ -138,6 +152,8 @@
         margin: 0
 
 .about-infograf_row2
+  +laptop-down
+    margin-bottom: 40px
   +tablet-down
     padding: 0
     justify-content: space-between
@@ -170,6 +186,8 @@
   font-family: $font-Gilroy-Light
   font-size: 30px
   line-height: 1.1
+  +laptop-down
+    font-size: 20px
   +tablet-down
     flex-direction: column
     justify-content: center
