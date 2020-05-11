@@ -33,13 +33,18 @@
   width: 100%
   display: flex
   flex-direction: row
-  justify-content: center
+  justify-content: space-between
+  padding: 0 30px
 .materials-block-inner
   width: 100%
   display: flex
   flex-direction: row
   justify-content: space-between
   flex-wrap: wrap
+  +tablet-down
+    justify-content: space-around
+
+//.materials-block-inner
 
 .materials-block
   display: flex
@@ -54,7 +59,7 @@
   padding: 30px 20px 0px 20px
   margin: 10px 10px
   +tablet-down
-    margin: 0
+    margin: 0 0 15px 0
 
   &:first-child, &:nth-child(6), &:nth-child(11)
     margin-left: 0px
