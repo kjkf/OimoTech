@@ -4,6 +4,7 @@ $(function() {
     const example = document.querySelector("#multi-item-example");
     const rawMaterial = document.querySelector("#materials-block");
     const applArea = document.querySelector("#appl-area-block");
+    const trainingStep = document.querySelector("#trainingStep");
 
     const mql1200 = window.matchMedia("(max-width: 1200px)");
     const mql768 = window.matchMedia("(max-width: 768px)");
@@ -28,10 +29,13 @@ $(function() {
             makeAdvantagesSlider();
             makeRawMaterialSlider();
             makeApplAreaSlider();
+            makeTrainingStepSlider();
+            makeClientsSlider();
         } else {
             removeAdvantagesSlider();
             removeRawMaterialSlider();
             removeApplAreaSlider();
+            removeTrainingStepSlider();
         }
     }
 
@@ -63,7 +67,6 @@ $(function() {
     function makeAdvantagesSlider() {
         advantages.classList.add("carousel");
         advantages.classList.add("slide");
-        //advantages.classList.add("carousel-multi-item");
         advantages.dataset.ride = 'carousel';
 
         const advantagesInner = advantages.querySelector('.advantages-inner');
@@ -74,7 +77,6 @@ $(function() {
         stepsList.forEach(function (step) {
             step.classList.add("carousel-item");
             step.classList.remove("item");
-            //step.classList.remove("w-25");
         });
 
         stepsList[0].classList.add('active');
@@ -99,6 +101,53 @@ $(function() {
             stepsList.forEach(function (step) {
                 step.classList.remove("carousel-item");
                 step.classList.add("item");
+                //step.classList.add("w-25");
+                if (step.classList.contains('active')) step.classList.remove('active');
+            });
+
+        }
+    }
+
+    function makeTrainingStepSlider() {
+        trainingStep.classList.add("carousel");
+        trainingStep.classList.add("slide");
+        trainingStep.dataset.ride = 'carousel';
+        let indicatorWrapper = trainingStep.querySelector('.carousel-indicators');
+        if (indicatorWrapper) indicatorWrapper.remove();
+
+        const trainingStepInner = trainingStep.querySelector('.training-step-in');
+        trainingStepInner.classList.add("carousel-inner");
+        trainingStepInner.classList.remove("training-step-in");
+
+        let stepsList = trainingStep.querySelectorAll(".training-step-item");
+        stepsList.forEach(function (step) {
+            step.classList.add("carousel-item");
+            step.classList.remove("training-step-item");
+        });
+
+        const indicator = createIndicatorsForSimpleSlider(stepsList.length, 'trainingStep');
+        trainingStep.appendChild(indicator);
+        stepsList[0].classList.add('active');
+    }
+
+    function removeTrainingStepSlider() {
+        trainingStep.classList.remove("carousel");
+        trainingStep.classList.remove("slide");
+        trainingStep.dataset.ride = '';
+
+        const trainingStepInner = trainingStep.querySelector('.carousel-inner');
+        if(trainingStepInner) {
+            trainingStepInner.classList.remove("carousel-inner");
+            trainingStepInner.classList.add("training-step-in");
+        }
+
+
+        let stepsList = trainingStep.querySelectorAll(".carousel-item");
+
+        if (stepsList.length > 0)  {
+            stepsList.forEach(function (step) {
+                step.classList.remove("carousel-item");
+                step.classList.add("training-step-item");
                 //step.classList.add("w-25");
                 if (step.classList.contains('active')) step.classList.remove('active');
             });
@@ -295,7 +344,7 @@ $(function() {
         let rowsList = [];
         let className = !slidesInRow ? '' : slidesInRow === 2 ? 'col-md-6' : slidesInRow === 3 ? 'col-md-4' : slidesInRow === 4 ? 'col-md-3' : '';
         let oldClassName = getClassNameByMask(list[0].classList.value, 'col-md-\\d+'); //list[0].classList.value.match(/col-md-\d+/);
-        //console.log(slidesInRow, className, oldClassName);
+        console.log(slidesInRow);
         for (let i=0; i<list.length; i=i+slidesInRow) {
             let row = document.createElement('div');
             row.className = 'row';

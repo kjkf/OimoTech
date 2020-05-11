@@ -27,6 +27,8 @@
   &-step-wrap
     display: flex
     margin-bottom: 35px
+    +phone-down
+      justify-content: center
 
   &-footer
     display: flex
@@ -84,6 +86,14 @@
 
 
 .training-step
+  //position: relative
+  .carousel-indicators
+    bottom: -30px
+  .carousel-control-prev, .carousel-control-next
+    top: 96%
+  .carousel-control-next
+    left: calc(100% - 20px)
+
   &-in
     display: flex
     flex-wrap: wrap
