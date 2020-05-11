@@ -2,7 +2,8 @@ $(function() {
     const advantages = document.querySelector("#advantages");
     const clients = document.querySelector("#multi-item-clients");
     const example = document.querySelector("#multi-item-example");
-    const rawMaterial = document.querySelector("#materials-block");
+    const rawMaterial = document.querySelector("#rawMaterialsBlock");
+    const materials = document.querySelector("#materialsBlock");
     const applArea = document.querySelector("#appl-area-block");
     const trainingStep = document.querySelector("#trainingStep");
 
@@ -31,12 +32,14 @@ $(function() {
             makeApplAreaSlider();
             makeTrainingStepSlider();
             makeClientsSlider();
+            makeMaterialsBlockSlider();
             typesFloor768less();
         } else {
             removeAdvantagesSlider();
             removeRawMaterialSlider();
             removeApplAreaSlider();
             removeTrainingStepSlider();
+            removeMaterialsBlockSlider();
         }
     }
 
@@ -171,7 +174,7 @@ $(function() {
             step.classList.remove("materials-block-item");
             //step.classList.remove("w-25");
         });
-        const indicator = createIndicatorsForSimpleSlider(stepsList.length, 'materials-block');
+        const indicator = createIndicatorsForSimpleSlider(stepsList.length, 'rawMaterialsBlock');
         rawMaterial.appendChild(indicator);
         stepsList[0].classList.add('active');
     }
@@ -202,40 +205,40 @@ $(function() {
     }
 
     function makeMaterialsBlockSlider() {
-        rawMaterial.classList.add("carousel");
-        rawMaterial.classList.add("slide");
-        rawMaterial.dataset.ride = 'carousel';
-        let indicatorWrapper = rawMaterial.querySelector('.carousel-indicators');
+        materials.classList.add("carousel");
+        materials.classList.add("slide");
+        materials.dataset.ride = 'carousel';
+        let indicatorWrapper = materials.querySelector('.carousel-indicators');
         if (indicatorWrapper) indicatorWrapper.remove();
 
-        const rawMaterialInner = rawMaterial.querySelector('.materials-block-inner');
-        rawMaterialInner.classList.add("carousel-inner");
-        rawMaterialInner.classList.remove("materials-block-inner");
+        const materialsInner = materials.querySelector('.materials-block-inner');
+        materialsInner.classList.add("carousel-inner");
+        materialsInner.classList.remove("materials-block-inner");
 
-        let stepsList = rawMaterial.querySelectorAll(".materials-block-item");
+        let stepsList = materials.querySelectorAll(".materials-block-item");
         stepsList.forEach(function (step) {
             step.classList.add("carousel-item");
             step.classList.remove("materials-block-item");
             //step.classList.remove("w-25");
         });
-        const indicator = createIndicatorsForSimpleSlider(stepsList.length, 'materials-block');
-        rawMaterial.appendChild(indicator);
+        const indicator = createIndicatorsForSimpleSlider(stepsList.length, 'materialsBlock');
+        materials.appendChild(indicator);
         stepsList[0].classList.add('active');
     }
 
     function removeMaterialsBlockSlider() {
-        rawMaterial.classList.remove("carousel");
-        rawMaterial.classList.remove("slide");
-        rawMaterial.dataset.ride = '';
+        materials.classList.remove("carousel");
+        materials.classList.remove("slide");
+        materials.dataset.ride = '';
 
-        const rawMaterialInner = rawMaterial.querySelector('.carousel-inner');
-        if(rawMaterialInner) {
-            rawMaterialInner.classList.remove("carousel-inner");
-            rawMaterialInner.classList.add("materials-block-inner");
+        const materialsInner = materials.querySelector('.carousel-inner');
+        if(materialsInner) {
+            materialsInner.classList.remove("carousel-inner");
+            materialsInner.classList.add("materials-block-inner");
         }
 
 
-        let stepsList = rawMaterial.querySelectorAll(".carousel-item");
+        let stepsList = materials.querySelectorAll(".carousel-item");
 
         if (stepsList.length > 0)  {
             stepsList.forEach(function (step) {
@@ -450,11 +453,14 @@ $(function() {
 
     //===========================================
 
-    if (window.innerWidth < 1200 && window.innerWidth > 768) {
+    //console.log(window.innerWidth, window.visualViewport.width);
+    //alert(window.innerWidth);
+    //alert(window.visualViewport.width);
+    if (window.visualViewport.width < 1200 && window.visualViewport.width > 768) {
         handlerForMediaQueries1200();
-    } else if (window.innerWidth <= 768 &&  window.innerWidth > 576) {
+    } else if (window.visualViewport.width <= 768 &&  window.visualViewport.width > 576) {
         handlerForMediaQueries();
-    } else if (window.innerWidth <= 576 ) {
+    } else if (window.visualViewport.width <= 576 ) {
         handlerForMediaQueries576();
     }
 
