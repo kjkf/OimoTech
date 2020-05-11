@@ -465,15 +465,37 @@ $(function() {
     } else if (window.visualViewport.width <= 576 ) {
         handlerForMediaQueries576();
     }
-
-    mql1200.addEventListener("change", () => {
-        handlerForMediaQueries1200();
-    });
-    mql768.addEventListener("change", () => {
-        handlerForMediaQueries();
-    });
-    mql576.addEventListener("change", () => {
-        handlerForMediaQueries576();
-    });
-
+//alert('before');
+    try {
+        // Chrome & Firefox
+        mql1200.addEventListener("change", () => {
+            handlerForMediaQueries1200();
+        });
+        mql768.addEventListener("change", () => {
+            handlerForMediaQueries();
+        });
+        mql576.addEventListener("change", () => {
+            handlerForMediaQueries576();
+        });
+    } catch (e1) {
+        try {
+            // Safari
+            /*darkMediaQuery.addListener((e) => {
+                this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+            });*/
+            mql1200.addListener((e) => {
+                handlerForMediaQueries1200();
+            });
+            mql768.addListener((e) => {
+                handlerForMediaQueries();
+                //alert('inside');
+            });
+            mql576.addListener( (e) => {
+                handlerForMediaQueries576();
+            });
+        } catch (e2) {
+            console.error(e2);
+        }
+    }
+    //alert('after');
 });
