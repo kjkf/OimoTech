@@ -16,7 +16,8 @@ $(function() {
         if (mql768.matches) { // If media query matches
             console.log('mql768.matches');
             makeClientsSlider();
-            makeExampleSlider();
+            //makeExampleSlider();
+            removeExampleSlider(3);
             typesFloor768less();
         } else {
             console.log('mql768.matches else');
@@ -35,6 +36,7 @@ $(function() {
             makeClientsSlider();
             makeMaterialsBlockSlider();
             typesFloor768less();
+            makeExampleSlider();
         } else {
             removeAdvantagesSlider();
             removeRawMaterialSlider();
