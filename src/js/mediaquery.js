@@ -16,10 +16,12 @@ $(function() {
             console.log('mql768.matches');
             makeClientsSlider();
             makeExampleSlider();
+            typesFloor768less();
         } else {
             console.log('mql768.matches else');
             removeClientsSlider(3);
             removeExampleSlider(2);
+            typesFloor756more();
         }
     }
 
@@ -267,9 +269,6 @@ $(function() {
         let indicatorWrapper = clients.querySelector('.carousel-indicators');
         let indicators = indicatorWrapper.querySelectorAll('li');
 
-        console.log('removeClientsSlider', cols);
-        //console.log(carouselItems, clientsList);
-
         removeItems(carouselItems);
         removeItems(indicators);
 
@@ -344,7 +343,7 @@ $(function() {
         let rowsList = [];
         let className = !slidesInRow ? '' : slidesInRow === 2 ? 'col-md-6' : slidesInRow === 3 ? 'col-md-4' : slidesInRow === 4 ? 'col-md-3' : '';
         let oldClassName = getClassNameByMask(list[0].classList.value, 'col-md-\\d+'); //list[0].classList.value.match(/col-md-\d+/);
-        console.log(slidesInRow);
+
         for (let i=0; i<list.length; i=i+slidesInRow) {
             let row = document.createElement('div');
             row.className = 'row';
@@ -361,7 +360,6 @@ $(function() {
     }
 
     function createIndicatorsForSimpleSlider(num, carouselId) {
-        console.log('createIndicatorsForSimpleSlider', num);
         let ol = document.createElement('ol');
         ol.className = 'carousel-indicators';
         for (let i = 0; i<num; i++) {
@@ -382,6 +380,28 @@ $(function() {
         const regexp = new RegExp(mask);
         let result = str.match(regexp);
         return result ? result[0] : '';
+    }
+    const typesFloorContents = document.querySelectorAll('.types-floor-content');
+    function typesFloor768less() {
+        typesFloorContents.forEach(floorContent => {
+            const typesFloorCols = floorContent.querySelectorAll('.types-floor-content__col');
+            const floorDescr = typesFloorCols[0].querySelector('.types-floor-descr');
+            const objects = typesFloorCols[1].children;
+            Array.from(objects).forEach(obj => {
+                floorDescr.append(obj);
+            });
+        });
+    }
+
+    function typesFloor756more() {
+        typesFloorContents.forEach(floorContent => {
+            const typesFloorCols = floorContent.querySelectorAll('.types-floor-content__col');
+            const floorDescr = typesFloorCols[0].querySelector('.types-floor-descr');
+            const objects = typesFloorCols[0].querySelectorAll('.types-floor-objects');
+            objects.forEach(obj => {
+                typesFloorCols[1].append(obj);
+            });
+        });
     }
 
     //===========================================
