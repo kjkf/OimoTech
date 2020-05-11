@@ -48,6 +48,7 @@
       left: 0
       margin-bottom: 30px
       box-shadow: 0px 11px 27px 0px rgba(0, 0, 0, 0.08)
+      font-size: 25px
     +tablet-down
       font-size: 20px
     &:after
@@ -96,15 +97,14 @@
   position: relative
   margin-left: 130px
   margin-bottom: 25px
-  // +laptop-down
-  //   //margin-left: 100px
-  //   padding-left: 100px
-  // +tablet-down
   +laptop-down
     padding: 0
     justify-content: space-between
     align-items: center
     margin: 0
+  +tablet-down
+    justify-content: space-around
+    align-items: center
 
 .about-infograf_row2
   margin-left: 0px
@@ -160,7 +160,7 @@
   +tablet-down
     width: 100%
     padding: 0
-    justify-content: space-between
+    justify-content: space-around
     align-items: center
     margin-top: 10px
     margin-bottom: 40px
