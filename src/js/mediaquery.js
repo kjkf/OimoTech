@@ -33,6 +33,7 @@ $(function() {
             makeApplAreaSlider();
             makeTrainingStepSlider();
             makeClientsSlider();
+            typesFloor768less();
         } else {
             removeAdvantagesSlider();
             removeRawMaterialSlider();
@@ -80,7 +81,6 @@ $(function() {
             step.classList.add("carousel-item");
             step.classList.remove("item");
         });
-
         stepsList[0].classList.add('active');
     }
 
@@ -96,7 +96,6 @@ $(function() {
             advantagesInner.classList.add("advantages-inner");
         }
 
-
         let stepsList = advantages.querySelectorAll(".carousel-item");
 
         if (stepsList.length > 0)  {
@@ -106,7 +105,6 @@ $(function() {
                 //step.classList.add("w-25");
                 if (step.classList.contains('active')) step.classList.remove('active');
             });
-
         }
     }
 
@@ -153,7 +151,6 @@ $(function() {
                 //step.classList.add("w-25");
                 if (step.classList.contains('active')) step.classList.remove('active');
             });
-
         }
     }
 
@@ -180,6 +177,53 @@ $(function() {
     }
 
     function removeRawMaterialSlider() {
+        rawMaterial.classList.remove("carousel");
+        rawMaterial.classList.remove("slide");
+        rawMaterial.dataset.ride = '';
+
+        const rawMaterialInner = rawMaterial.querySelector('.carousel-inner');
+        if(rawMaterialInner) {
+            rawMaterialInner.classList.remove("carousel-inner");
+            rawMaterialInner.classList.add("materials-block-inner");
+        }
+
+
+        let stepsList = rawMaterial.querySelectorAll(".carousel-item");
+
+        if (stepsList.length > 0)  {
+            stepsList.forEach(function (step) {
+                step.classList.remove("carousel-item");
+                step.classList.add("materials-block-item");
+                //step.classList.add("w-25");
+                if (step.classList.contains('active')) step.classList.remove('active');
+            });
+
+        }
+    }
+
+    function makeMaterialsBlockSlider() {
+        rawMaterial.classList.add("carousel");
+        rawMaterial.classList.add("slide");
+        rawMaterial.dataset.ride = 'carousel';
+        let indicatorWrapper = rawMaterial.querySelector('.carousel-indicators');
+        if (indicatorWrapper) indicatorWrapper.remove();
+
+        const rawMaterialInner = rawMaterial.querySelector('.materials-block-inner');
+        rawMaterialInner.classList.add("carousel-inner");
+        rawMaterialInner.classList.remove("materials-block-inner");
+
+        let stepsList = rawMaterial.querySelectorAll(".materials-block-item");
+        stepsList.forEach(function (step) {
+            step.classList.add("carousel-item");
+            step.classList.remove("materials-block-item");
+            //step.classList.remove("w-25");
+        });
+        const indicator = createIndicatorsForSimpleSlider(stepsList.length, 'materials-block');
+        rawMaterial.appendChild(indicator);
+        stepsList[0].classList.add('active');
+    }
+
+    function removeMaterialsBlockSlider() {
         rawMaterial.classList.remove("carousel");
         rawMaterial.classList.remove("slide");
         rawMaterial.dataset.ride = '';
