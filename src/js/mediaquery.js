@@ -17,6 +17,7 @@ $(function() {
             console.log('mql768.matches');
             makeClientsSlider();
             makeExampleSlider();
+            typesFloor768less();
         } else {
             console.log('mql768.matches else');
             removeClientsSlider(3);
