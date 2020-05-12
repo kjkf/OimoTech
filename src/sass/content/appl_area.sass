@@ -21,6 +21,7 @@
     font-size: 16px
     line-height: 1.5
     +tablet-down
+      margin-top: 20px
       font-size: 14px
 
   .comment
@@ -29,6 +30,9 @@
     max-width: 330px
     padding-left: 50px
     padding-bottom: 35px
+    +tablet-down
+      margin-top: 25px
+      margin-left: 15px
     &:after
       width: 50px
       height: 50px
@@ -76,6 +80,9 @@
   display: flex
   flex-direction: row
   justify-content: flex-start
+  +tablet-down
+    justify-content: center
+    align-items: center
 
 .appl-area-block-inner
   width: 100%
@@ -85,3 +92,6 @@
   +laptop-down
     flex-wrap: wrap
     justify-content: space-around
+  +tablet-down
+    justify-content: center
+    align-items: center
