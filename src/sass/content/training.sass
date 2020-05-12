@@ -6,7 +6,7 @@
   .container
     border-radius: 5px
     padding: 51px 30px 65px 38px
-    +laptop
+    //+laptop
       max-width: 1170px
     +phone-down
       //padding: 15px 25px 65px 35px
@@ -61,6 +61,8 @@
     height: auto
     bottom: -85px
     right: -23px
+    +laptop-down
+      width: 100%
     +tablet-down
       position: sticky
       order: 2
@@ -87,16 +89,27 @@
 
 
 .training-step
+  width: 100%
   //position: relative
   .carousel-indicators
-    bottom: -30px
+    bottom: -10px
   .carousel-control-prev, .carousel-control-next
     display: none
     +phone-down
       display: block
-      top: 96%
+      top: 86%
   .carousel-control-next
-    left: calc(100% - 20px)
+    left: calc(100% - 40px)
+  .carousel-indicators
+    margin-left: 28%
+    margin-right: 28%
+  .carousel-control-prev
+    left: 40px
+  .carousel-item
+    width: 100%
+    min-height: 165px
+    text-align: center
+    margin-top: 35px
 
   &-in
     display: flex
@@ -113,86 +126,6 @@
     text-align: center
     position: relative
 
-    &:after
-      content: ''
-      position: absolute
-      top: -8px
-      right: -24px
-      border-left: 1px solid #d1d1d1
-      height: 50%
-      +laptop-down
-        right: 0px
-      +phone-down
-        display: none
-
-    &:first-child
-      .training-step__num
-        padding-left: 87px
-        &:before
-          background-image: url("../images/icons/certification.png")
-          left: 50px
-
-    &:nth-child(2)
-      &:after
-        +laptop-down
-          display: none
-      .training-step__num
-        &:before
-          background-image: url("../images/icons/set-of-patterns.png")
-          width: 77px
-          height: 79px
-          transform: rotate(-150deg) scale(1.6)
-          left: -33px
-          top: -5px
-    &:nth-child(3)
-      &:after
-        display: none
-        +laptop-down
-          display: inline-block
-      .training-step__num
-        &:before
-          background-image: url("../images/icons/design-catalog.png")
-          width: 72px
-          height: 72px
-          left: 20px
-          top: 8px
-    &:nth-child(4)
-      margin-left: auto
-      margin-right: 40px
-      +laptop-down
-        margin: 0px
-      &:after
-        top: 6px
-        +laptop-down
-          display: none
-      +tablet-down
-        margin: 0px
-      .training-step__num
-        padding-left: 0px
-        &:before
-          background-image: url("../images/icons/выезд-нашего-специалиста.png")
-          width: 80px
-          height: 95px
-          left: -43px
-          top: -28px
-    &:nth-child(5)
-      margin-right: auto
-      margin-left: 40px
-      +laptop-down
-        margin: 0px
-      +tablet-down
-        margin: 0px
-      &:after
-        display: none
-      .training-step__num
-        padding-left: 0px
-        &:before
-          background-image: url("../images/icons/dostavka_v_srok.png")
-          width: 70px
-          height: 70px
-          left: -33px
-          top: 3px
-
   &__num
     position: relative
     font-size: 68px
@@ -200,6 +133,7 @@
     color: $blue-text
     margin-bottom: 6px
     padding-left: 55px
+    display: inline-block
     &:before
       content: ''
       display: inline-block
@@ -219,9 +153,131 @@
     margin-bottom: 10px
     +laptop-down
       margin-bottom: 30px
+    +tablet-down
+      margin-bottom: 10px
     b
       color: #000000
 
-  .carousel-item
-    width: 320px
-    text-align: center
+
+.training-step-item
+  &:after
+    content: ''
+    position: absolute
+    top: -8px
+    right: -24px
+    border-left: 1px solid #d1d1d1
+    height: 50%
+    +laptop-down
+      right: 0px
+    +phone-down
+      display: none
+
+  &:first-child
+    .training-step__num
+      padding-left: 87px
+      &:before
+        background-image: url("../images/icons/certification.png")
+        left: 50px
+
+  &:nth-child(2)
+    &:after
+      +laptop-down
+        display: none
+    .training-step__num
+      &:before
+        background-image: url("../images/icons/set-of-patterns.png")
+        width: 77px
+        height: 79px
+        transform: rotate(-150deg) scale(1.6)
+        left: -33px
+        top: -5px
+  &:nth-child(3)
+    &:after
+      display: none
+      +laptop-down
+        display: inline-block
+      +tablet-down
+        display: none
+    .training-step__num
+      &:before
+        background-image: url("../images/icons/design-catalog.png")
+        width: 72px
+        height: 72px
+        left: 20px
+        top: 8px
+  &:nth-child(4)
+    //margin-left: auto
+    //margin-right: 40px
+    //+laptop-down
+      margin: unset
+    &:after
+      top: 6px
+      +laptop-down
+        display: none
+    .training-step__num
+      padding-left: 0px
+      &:before
+        background-image: url("../images/icons/выезд-нашего-специалиста.png")
+        width: 80px
+        height: 95px
+        left: -43px
+        top: -28px
+  &:nth-child(5)
+    margin-right: auto
+    margin-left: 40px
+    +laptop-down
+      margin: unset
+    &:after
+      display: none
+    .training-step__num
+      padding-left: 0px
+      &:before
+        background-image: url("../images/icons/dostavka_v_srok.png")
+        width: 70px
+        height: 70px
+        left: -33px
+        top: 3px
+
+
+.carousel-item
+  &:first-child
+    .training-step__num
+      padding-left: 87px
+      &:before
+        background-image: url("../images/icons/certification.png")
+        left: 50px
+  &:nth-child(2)
+    .training-step__num
+      &:before
+        background-image: url("../images/icons/set-of-patterns.png")
+        width: 77px
+        height: 79px
+        transform: rotate(-150deg) scale(1.6)
+        left: -33px
+        top: -5px
+  &:nth-child(3)
+    .training-step__num
+      &:before
+        background-image: url("../images/icons/design-catalog.png")
+        width: 72px
+        height: 72px
+        left: 20px
+        top: 8px
+  &:nth-child(4)
+    .training-step__num
+      padding-left: 0px
+      &:before
+        background-image: url("../images/icons/выезд-нашего-специалиста.png")
+        width: 80px
+        height: 95px
+        left: -43px
+        top: -28px
+  &:nth-child(5)
+    .training-step__num
+      padding-left: 0px
+      &:before
+        background-image: url("../images/icons/dostavka_v_srok.png")
+        width: 70px
+        height: 70px
+        left: -33px
+        top: 3px

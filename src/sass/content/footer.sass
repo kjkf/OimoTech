@@ -1,14 +1,15 @@
 .footer
   .container
-    padding-left: 30px
-    padding-right: 30px
-    +laptop
-      max-width: 1230px
+    +laptop-down
+      padding-left: 15px
+      padding-right: 15px
   &__top
     display: flex
     font-family: $font-Gilroy-Light
     margin-bottom: 70px
     margin-left: 35px
+    +laptop-down
+      margin-left: 0px
     +tablet-down
       flex-direction: column
   &__bottom
@@ -19,15 +20,20 @@
     line-height: 1.3
     +tablet-down
       flex-direction: column
+      align-items: center
   .contacts
     font-size: 16px
     display: flex
     flex-direction: column
-    width: 355px
-    padding-right: 56px
+    width: 100%
+    //width: 355px
+    //padding-right: 56px
     text-align: left
+    margin-left: -10px
     +tablet-down
       order: 0
+      margin-left: unset
+      margin-bottom: 10px
 
     .bold-text
       font-size: 20px
