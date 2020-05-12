@@ -29,7 +29,7 @@
 				<div class="cup anim-jump">Лидер №1 по производству промышленных полов в Кыргызстане</div>
 				<div class="contacts">
 					<p class="green">Звоните, мы работаем</p>
-					<span class="contacts__phone">+996 555 449 906</span>
+					<a href="tel:0555449906" class="contacts__phone">+996 555 449 906</a>
 					<ul class="social-menu">
 						<li class="social-menu__item"><a href="https://api.whatsapp.com/send?phone=996555449906" class="whatsapp"></a></li>
 						<li class="social-menu__item"><a href="#" class="telegram"></a></li>
@@ -427,11 +427,11 @@
 						<div class="owner-form__contact bl-white ic-oimo anim-jump shadow">
 							<h3 class="title">Если у Вас комплексный проект, я <span class="blue-text">готов обсудить детали проекта лично</span></h3>
 							<p>и сделать Вам максимальную скидку. Просто оставьте Ваш телефон</p>
-							<form method="POST" id="appl_form1" name="appl_form1" class="o-form needs-validation" novalidate>
+							<form action="mail.php" method="POST" id="appl_form1" name="appl_form1" class="o-form needs-validation" novalidate>
 								<div class="row">
 									<div class="col-md-6 col-sm-12">
 										<div class="form-group mb-md-0 mb-sm-1">
-											<input type="text" class="form-control phone" placeholder="+ 996 (___)__ __ __" required>
+											<input type="text" class="form-control phone" name="user_phone"  placeholder="+ 996 (___)__ __ __" required>
 										</div>
 									</div>
 									<div class="col-md-6 col-sm-12">
@@ -1659,7 +1659,7 @@
 							</div>
 							<div class="col-lg-6">
 								<div class="form-group">
-									<button type="submit" class="btn btn-green"><span class="button__blik"></span>Связаться с директором</button>
+									<button type="submit" class="btn btn-green"><span class="button__blik"></span>Записаться</button>
 								</div>
 							</div>
 						</div>
