@@ -1,6 +1,6 @@
 .header
   margin: 25px auto 35px
-  +tablet-down
+  +ipad-down
     margin-top: 10px
   .container
     font-size: 12px
@@ -22,14 +22,14 @@
     display: flex
     justify-content: space-between
     margin-bottom: 13px
-    +tablet-down
+    +ipad-down
       flex-direction: column
 
   &__logo
     margin-right: 60px
     +laptop-down
       margin-right: 0px
-    +tablet-down
+    +ipad-down
       margin-bottom: 15px
   .contacts__phone
     margin-bottom: 5px
@@ -40,13 +40,13 @@
     justify-content: space-between
     +laptop-down
       align-items: center
-    +tablet-down
+    +ipad-down
       width: 100%
       flex-direction: column
 
   .social-menu
     justify-content: flex-end
-    +tablet-down
+    +ipad-down
       justify-content: center
       margin-bottom: 14px
 
@@ -55,8 +55,8 @@
   &__link
     display: inline-block
     width: 100px
-    background-color: red
-    +tablet-down
+    background-color: #e0c15d
+    +ipad-down
       width: 60px
       height: 60px
       margin-right: 12px
@@ -66,7 +66,7 @@
     width: 200px
     +laptop-down
       min-width: 150px
-    +tablet-down
+    +ipad-down
       font-size: 10px
       align-self: center
       line-height: 1.3
@@ -74,7 +74,7 @@
 
 .contacts
   text-align: right
-  +tablet-down
+  +ipad-down
     order: 1
     line-height: 1.8
 
@@ -90,7 +90,7 @@
   padding-left: 75px
   +laptop-down
     min-width: 190px
-  +tablet-down
+  +ipad-down
     order: 2
     font-size: 10px
     line-height: 1.4
@@ -109,13 +109,13 @@
       image: url("../images/icons/cup.png")
       repeat: no-repeat
       size: contain
-    +tablet-down
+    +ipad-down
       left: 7px
 
 .get-offer
   width: 300px
   align-self: center
-  +tablet-down
+  +ipad-down
     order: 0
     margin-bottom: 15px
   .btn
@@ -133,7 +133,7 @@
   +laptop-down
     padding: 15px 10px
     justify-content: space-around
-  +tablet-down
+  +ipad-down
     flex-direction: column
     background-color: #f6f7f8
     padding: 90px 30px
@@ -141,7 +141,7 @@
 
   &-item
     position: relative
-    +tablet-down
+    +ipad-down
       margin-bottom: 8px
     &:before
       content: ''
@@ -160,7 +160,7 @@
     padding: 5px 20px 5px 19px
     +laptop-down
       padding: 5px 10px 5px 12px
-    +tablet-down
+    +ipad-down
       padding-left: 25px
       color: #646464
     &.active, &:hover
@@ -170,7 +170,7 @@
 .header
   .btn-gamburg, .btn-close
     display: none
-    +tablet-down
+    +ipad-down
       display: block
       position: static
   .btn-gamburg
@@ -178,21 +178,21 @@
     margin-right: 30px
   .btn-close
     display: none
-    +tablet-down
+    +ipad-down
       display: block
       position: absolute
       top: 2px
       right: 15px
 
 .header__nav
-  +tablet-down
+  +ipad-down
     position: absolute
     width: 100%
     right: 0
     z-index: 1
 
   .nav-wrap
-    +tablet-down
+    +ipad-down
       display: none
       margin-top: -70px
 
