@@ -37,6 +37,12 @@ task('copy:html', () => {
       .pipe(reload({ stream: true }));
 });
 
+task('copy:php', () => {
+    return src('src/*.php')
+        .pipe(dest('dist/views'))
+        .pipe(reload({ stream: true }));
+});
+
 task('copy:favicon', () => {
   return src('src/*.ico')
       .pipe(dest('dist/public'))
@@ -150,6 +156,7 @@ task('watch', () => {
     watch('./src/sass/**/*.sass', series("styles"));
     watch('./src/js/**/*.js', series("scripts"));
     watch('./src/*.html', series("copy:html"));
+    watch('./src/*.php', series("copy:php"));
     watch('./src/assets/*.*', series("copy:assets"));
     watch('./src/*.ico', series("copy:favicon"));
     watch('./src/css/*.css', series("copy:css"));
@@ -169,13 +176,13 @@ task('build-copy:html', () => {
 
 task(
     "default",
-    series('clean', parallel('copy:html', 'copy:favicon', 'copy:fonts', 'copy:images', 'copy:icons', 'copy:css', 'copy:assets', 'styles', 'icons', 'scripts'),
+    series('clean', parallel('copy:html', 'copy:php', 'copy:favicon', 'copy:fonts', 'copy:images', 'copy:icons', 'copy:css', 'copy:assets', 'styles', 'icons', 'scripts'),
     parallel('watch', 'server')
     )
 );
 
 task(
     "build",
-    series('clean', parallel('build-copy:html', 'copy:favicon', 'copy:fonts', 'copy:images', 'copy:icons', 'copy:css', 'copy:assets', 'styles', 'icons', 'scripts')
+    series('clean', parallel('build-copy:html', 'copy:php', 'copy:favicon', 'copy:fonts', 'copy:images', 'copy:icons', 'copy:css', 'copy:assets', 'styles', 'icons', 'scripts')
     )
 );
