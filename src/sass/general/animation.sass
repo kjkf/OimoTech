@@ -11,6 +11,13 @@
   top: 50%
   left: 50%
   z-index: 1
+  +tablet-down
+    height: 100%
+    width: 100%
+    top: 65%
+    left: 65%
+  +phone-down
+    width: 100%
 
 .ab-item__pulse
   position: absolute
@@ -22,6 +29,9 @@
   border-radius: 50%
   opacity: .3
   animation: animPulse 6s linear infinite
+  +tablet-down
+    height: 70%
+    width: 70%
   
 .ab-city_item-pulse_1
   animation-delay: 0s
