@@ -1,5 +1,5 @@
 .banner
-  margin-bottom: 60px
+  margin-bottom: 22px
   +tablet-down
     margin-bottom: 30px
 
@@ -20,7 +20,7 @@
         width: 100%
       &--left
         //margin-right: 59px
-        padding: 110px 0px 0
+        padding: 96px 0px 0
         +laptop-down
           padding-top: 10px
         +ipad-down
@@ -72,6 +72,8 @@
         position: relative
         +phone-down
           margin-right: 25px
+        +phonemin-down
+          margin-right: 5px
         +tablet-down
           font-size: 28px
           line-height: .8 //14.48px
@@ -146,12 +148,13 @@
     padding: 0
     +laptop-down
       padding: 0
-      margin-bottom: 20px
+      margin: 0px auto 20px
     +tablet-down
       padding: 0 20px
-      margin: 0px auto 30px
+      margin-bottom: 30px
     +phonemin-down
-      padding: 0px 10px
+      padding: 0px
+      max-width: 270px
 
   .parallelogram-title
     font-family: $font-Gilroy-Light
@@ -164,6 +167,8 @@
       font-size: 16px
     +phone-down
       font-size: 14px
+    +phonemin-down
+      font-size: 12px
 
 
 
