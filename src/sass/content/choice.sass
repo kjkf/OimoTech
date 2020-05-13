@@ -1,19 +1,23 @@
 .choice
   margin-top: 58px
   margin-bottom: 60px
-  .container
-    //+laptop
-      max-width: 1200px
+  +phone-down
+    margin-bottom: 40px
+
   &__img
     width: 250px
     height: 250px
     margin-bottom: 39px
     margin-top: 15px
     +ipad-down
-      margin-left: -104px
+      margin-left: calc(-256px/(2))
+    +phone-down
+      margin-left: -50px
     img
       margin-left: 95px
       margin-top: 30px
+      +phonemin-down
+        margin-left: 45px
 
   .comment
     width: 86%
