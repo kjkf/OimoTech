@@ -1,6 +1,4 @@
 .owner
-  +phone-down
-    padding: 0px 15px
   .container
     padding-top: 28px
     padding-bottom: 40px
@@ -11,7 +9,7 @@
     +laptop-down
       padding-left: 15px
       padding-right: 15px
-    +phone-down
+    +phonemin-down
       padding-left: 0px
       padding-right: 0px
 
@@ -21,9 +19,11 @@
   flex-direction: column
   color: #000000
   width: 370px
+  overflow: hidden
   +phone-down
     width: 100%
     padding: 0px 5px
+
 
   &__title
     display: inline-block
@@ -102,7 +102,7 @@
 
       +phone-down
         background-color: #FFFFFF
-        padding: 10px 0px 10px 30px
+        padding: 10px 0px 10px 20px
 
       .parallelogram-title
         text-align: left

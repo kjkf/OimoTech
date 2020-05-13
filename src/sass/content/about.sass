@@ -47,7 +47,6 @@
     top: -51px
     left: 0
     background: white
-    //+tablet-down
     +laptop-down
       width: 100%
       position: relative
@@ -70,7 +69,6 @@
       background-image: url('../images/icons/protection.png')
       background-repeat: no-repeat
       background-size: 213px 186px
-      //+tablet-down
       +laptop-down
         width: 85px
         height: 80px
@@ -79,6 +77,8 @@
         left: auto
         right: -15px
         bottom: -10px
+      +phone-down
+        right: 0px
   &__text
     margin-left: 250px
     font-family: $font-Roboto-Regular

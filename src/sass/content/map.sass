@@ -9,6 +9,8 @@
     +tablet-down
       flex-direction: column
       align-items: center
+    +phone-down
+      overflow: hidden
 
   #map
     border-radius: 5px
@@ -17,6 +19,9 @@
     +tablet-down
       width: 340px
       height: 370px
+    +phone-down
+      width: calc(100% - 7px)
+      height: 300px
 
   .hintContent
     color: red

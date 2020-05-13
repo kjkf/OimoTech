@@ -1,6 +1,10 @@
 .get-pricelist
   margin-top: 75px
   margin-bottom: 80px
+  .container
+    display: flex
+    justify-content: center
+    overflow: hidden
   .get-pricelist-form
     padding: 40px 40px 40px 45px
     +ipad-down
@@ -42,6 +46,8 @@
 
 .get-pricelist__img
   position: relative
+  width: 680px
+  height: 406px
   z-index: -1
   .img-wrap
     position: absolute
@@ -58,15 +64,47 @@
     +phone-down
       left: 0px
     +phonemin-down
-      width: 320px
+      width: 280px
   img
     width: 100%
     height: auto
 
 .get-pricelist-form-wrap
   margin-left: 275px
+  position: relative
   +ipad-down
     margin-left: 0px
+    margin-top: 160px
+  +phone-down
+    margin-top: 100px
+  &:before
+    content: ''
+    position: absolute
+    left: -220px
+    top: -35px
+    width: 680px
+    height: 406px
+    transform: rotate(21deg) scale(1.3)
+    z-index: -1
+    background:
+      color: transparent
+      image: url("../images/icons/catalog.png")
+      repeat: no-repeat
+      size: contain
+    +ipad-down
+      width: 70%
+      top: -160px
+      left: 15%
+    +phone-down
+      width: 365px
+      height: 225px
+      top: -80px
+    +phonemin-down
+      width: 230px
+      height: 200px
+      top: -80px
+      left: 10%
+
 
 .catalog
   position: relative

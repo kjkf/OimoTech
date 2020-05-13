@@ -46,6 +46,9 @@
     .carousel-control-prev, .carousel-control-next
       left: -32px
       top: 37%
+      +laptop-down
+        left: -15px
+        top: 30%
       +tablet-down
         left: 5%
         top: 100%
@@ -54,6 +57,8 @@
     .carousel-control-next
       left: 100% //calc(100% + 8px)
       //top: 37%
+      +laptop-down
+        left: calc(100% - 15px)
       +tablet-down
         left: 90%
         //top: 100%
