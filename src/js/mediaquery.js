@@ -132,7 +132,7 @@ $(function() {
         });
 
         const indicator = createIndicatorsForSimpleSlider(stepsList.length, 'trainingStep');
-        trainingStep.appendChild(indicator);
+        trainingStepInner.insertAdjacentElement('beforebegin', indicator);
         stepsList[0].classList.add('active');
     }
 
@@ -178,7 +178,8 @@ $(function() {
             //step.classList.remove("w-25");
         });
         const indicator = createIndicatorsForSimpleSlider(stepsList.length, 'rawMaterialsBlock');
-        rawMaterial.appendChild(indicator);
+        //rawMaterial.appendChild(indicator);
+        rawMaterialInner.insertAdjacentElement('beforebegin', indicator);
         stepsList[0].classList.add('active');
     }
 
@@ -225,7 +226,8 @@ $(function() {
             //step.classList.remove("w-25");
         });
         const indicator = createIndicatorsForSimpleSlider(stepsList.length, 'materialsBlock');
-        materials.appendChild(indicator);
+        //materials.appendChild(indicator);
+        materialsInner.insertAdjacentElement('beforebegin', indicator);
         stepsList[0].classList.add('active');
     }
 
@@ -272,7 +274,8 @@ $(function() {
             step.classList.remove("col-md-3");
         });
         const indicator = createIndicatorsForSimpleSlider(stepsList.length, 'appl-area-block');
-        applArea.appendChild(indicator);
+        //applArea.appendChild(indicator);
+        applAreaInner.insertAdjacentElement('beforebegin', indicator);
         stepsList[0].classList.add('active');
     }
 
