@@ -6,6 +6,9 @@
       display: none
       +tablet-down
         display: flex
+        bottom: -30px
+      +phonemin-down
+        bottom: 38px
 
   .examples_header
     padding: 0 40px
@@ -40,18 +43,20 @@
       width: 100%
 
   #multi-item-example
-    .carousel-control-prev
+    .carousel-control-prev, .carousel-control-next
       left: -32px
       top: 37%
       +tablet-down
-        left: 15%
-        top: 106%
+        left: 5%
+        top: 100%
+      +phonemin-down
+        top: 80%
     .carousel-control-next
       left: 100% //calc(100% + 8px)
-      top: 37%
+      //top: 37%
       +tablet-down
-        left: 85%
-        top: 106%
+        left: 90%
+        //top: 100%
 
     .card
       border-width: 0
@@ -61,6 +66,10 @@
       +laptop-down
         max-height: 320px
         height: 320px
+      +phone-down
+        background: transparent
+        padding: 0
+        height: 280px
 
       .card-title
         font-size: 14px
@@ -74,6 +83,8 @@
 
       .carousel-small
         //width: 300px
+        border-radius: 5px
+        margin-bottom: 10px
         .carousel-item
           border-radius: 5px
           img
