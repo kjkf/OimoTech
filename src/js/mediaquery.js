@@ -462,12 +462,14 @@ $(function() {
 
     //console.log(window.innerWidth, window.visualViewport.width);
     //alert(window.innerWidth);
-    //alert(window.visualViewport.width);
-    if (window.visualViewport.width < 1200 && window.visualViewport.width > 768) {
+    //console.log(window.visualViewport.width);
+    const windowInner = window.visualViewport ? window.visualViewport.width : window.innerWidth;
+    //console.log(windowInner, window.innerWidth);
+    if (windowInner < 1200 && windowInner > 768) {
         handlerForMediaQueries1200();
-    } else if (window.visualViewport.width <= 768 &&  window.visualViewport.width > 576) {
+    } else if (windowInner <= 768 &&  windowInner > 576) {
         handlerForMediaQueries();
-    } else if (window.visualViewport.width <= 576 ) {
+    } else if (windowInner <= 576 ) {
         handlerForMediaQueries576();
     }
 //alert('before');

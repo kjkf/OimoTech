@@ -38,8 +38,8 @@ $(document).ready( function() {
         });
 
     }, false);
-
-    if (window.visualViewport.width >= 992) {
+    const windowInner = window.visualViewport ? window.visualViewport.width : window.innerWidth;
+    if (windowInner >= 992) {
         const nav = document.querySelector('.nav-wrap');
         const banner = document.querySelector('.banner');
         //const start = banner.getBoundingClientRect().top;
