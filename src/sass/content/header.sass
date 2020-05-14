@@ -8,12 +8,10 @@
     font-family: $font-Gilroy-Light
     display: flex
     flex-direction: column
-    padding: 0px 30px $nav_h
+    padding: 0px 30px
     +laptop-down
       padding-left: 15px
       padding-right: 15px
-    +ipad-down
-      padding-bottom: 0px
     +phonemin-down
       padding-left: 15px
       padding-right: 15px
@@ -197,9 +195,13 @@
     width: 100%
     right: 0
     z-index: 100
-
+  .nav
+    border: 2px solid #4095b4
+    +ipad-down
+      border-width: 0px
   .nav-wrap
     //position: fixed
+    transition: top 1s ease-out 0.5s
     z-index: 100
     min-height: $nav_h
     height: $nav_h

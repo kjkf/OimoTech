@@ -39,11 +39,14 @@ $(document).ready( function() {
 
     }, false);
 
-    if (window.visualViewport.width > 992) {
+    if (window.visualViewport.width >= 992) {
         const nav = document.querySelector('.nav-wrap');
+        const banner = document.querySelector('.banner');
+        //const start = banner.getBoundingClientRect().top;
+        const start = nav.getBoundingClientRect().bottom;
         window.addEventListener('scroll', e => {
             //console.log('scroll===', window.pageYOffset);
-            if (window.pageYOffset > 500) {
+            if (window.pageYOffset > start) {
                 nav.style.position = 'fixed';
                 nav.style.top = '25px';
             } else {
