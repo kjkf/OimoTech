@@ -39,4 +39,18 @@ $(document).ready( function() {
 
     }, false);
 
+    if (window.visualViewport.width > 992) {
+        const nav = document.querySelector('.nav-wrap');
+        window.addEventListener('scroll', e => {
+            //console.log('scroll===', window.pageYOffset);
+            if (window.pageYOffset > 500) {
+                nav.style.position = 'fixed';
+                nav.style.top = '25px';
+            } else {
+                nav.style.position = 'unset';
+                nav.style.top = 'unset';
+            }
+        })
+    }
+
 });
