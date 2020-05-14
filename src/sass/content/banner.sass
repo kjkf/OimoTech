@@ -103,6 +103,8 @@
             max-width: 170px
           .info-text--small
             width: 70%
+            +phone-down
+              width: 71%
           &:before
             width: 30px
             height: 30px
@@ -149,9 +151,11 @@
     +laptop-down
       padding: 0
       margin: 0px auto 20px
+      max-width: 443px
     +tablet-down
       padding: 0 20px
       margin-bottom: 30px
+      max-width: 560px
     +phonemin-down
       padding: 0px
       max-width: 270px
