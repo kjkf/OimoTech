@@ -8,7 +8,8 @@
     font-family: $font-Gilroy-Light
     display: flex
     flex-direction: column
-    padding: 0px 30px
+    padding: 0px 30px $nav_h
+
     //+laptop
       max-width: 1230px
     +laptop-down
@@ -199,6 +200,11 @@
     z-index: 100
 
   .nav-wrap
+    position: fixed
+    z-index: 100
+    min-height: $nav_h
+    height: $nav_h
+
     +ipad-down
       display: none
       margin-top: -70px
