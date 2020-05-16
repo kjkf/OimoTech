@@ -61,6 +61,8 @@
     position: relative
     width: 100%
     flex-direction: column
+  +phone-down
+    padding: 0px 7px
   &__text
     display: flex
     flex-direction: column
@@ -71,6 +73,8 @@
     +tablet-down
       line-height: 1.3
       width: 100%
+      max-width: unset
+      margin-right: 0px
   &__img
     margin-top: 10px
     margin-left: 90px
@@ -81,6 +85,9 @@
     +laptop-down
       padding-left: 20px
       margin-left: 30px
+    +tablet-down
+      padding-left: 0px
+      margin-left: 0px
     .block__img
       width: 500px
       height: 535px
@@ -91,12 +98,16 @@
       +tablet-down
         margin: 0
         position: absolute
+        top: 20%
+        left: 50%
+        margin-left: calc(-310px/2)
+      +phone-down
+        width: 290px
         top: 24%
-        left: 35px
+        left: 50%
+        margin-left: calc(-290px/2)
       +phonemin-down
-        width: 300px
-        top: 27%
-        left: 0
+        top: 28%
 
   &__footer
     font-family: $font-Gilroy-ExtraBold
