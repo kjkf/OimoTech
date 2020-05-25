@@ -2,7 +2,8 @@
 (function () {
     var slideIndex = 1;
     const exampleSliders = document.getElementById('multi-item-example');
-    if (exampleSliders) {
+    const windowInner = window.visualViewport ? window.visualViewport.width : window.innerWidth;
+    if (exampleSliders && windowInner > 576) {
 
         exampleSliders.addEventListener('click', e => {
             if (e.target.tagName !== 'IMG') return;
