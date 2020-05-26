@@ -28,9 +28,9 @@ $(document).ready( function() {
                     event.preventDefault();
                     event.stopPropagation();
                 } else {
-                    if (form.getAttribute('id') === "price_form") {
+                   /* if (form.getAttribute('id') === "price_form") {
 
-                    }
+                    }*/
                 }
                 form.classList.add('was-validated');
             }, false);
